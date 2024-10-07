@@ -16,6 +16,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Spellcheck
+        run: pnpm spellcheck
+
       - name: Lint
         run: pnpm lint
 
