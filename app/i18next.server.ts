@@ -1,3 +1,5 @@
+// Ref: https://remix.run/resources/remix-i18next
+
 import Backend from "i18next-fs-backend";
 import { resolve } from "node:path";
 import { RemixI18Next } from "remix-i18next/server";

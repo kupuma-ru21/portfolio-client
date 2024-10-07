@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const t = await i18next.getFixedT(request);
+  const t = await i18next.getFixedT(request, "index");
   const title = t("pageTitle");
   return json({ title });
 }
@@ -18,6 +18,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 };
 
 export default function Index() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("index");
   return <Button colorScheme="teal">{t("greeting")}</Button>;
 }
+
+export const handle = { i18n: "index" };
