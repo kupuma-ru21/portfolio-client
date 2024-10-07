@@ -1,6 +1,6 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["Typecheck", "isbot", "Pipeable"],
+  "words": ["Typecheck", "Pipeable"],
   "ignorePaths": ["node_modules", "pnpm-lock.yaml", "build"]
 }
