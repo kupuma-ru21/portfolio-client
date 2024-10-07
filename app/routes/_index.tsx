@@ -9,7 +9,7 @@ import i18next from "~/i18next.server";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request);
-  const title = t("My page title");
+  const title = t("pageTitle");
   return json({ title });
 }
 

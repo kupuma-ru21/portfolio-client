@@ -8,22 +8,10 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
-import {
-  MetaFunction,
-  LinksFunction,
-  LoaderFunctionArgs,
-} from "@remix-run/node"; // Depends on the runtime you choose
+import { LinksFunction, LoaderFunctionArgs } from "@remix-run/node"; // Depends on the runtime you choose
 import i18next from "~/i18next.server";
 import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "remix-i18next/react";
-
-export const meta: MetaFunction = () => {
-  return [
-    { charSet: "utf-8" },
-    { title: "New Remix App" },
-    { name: "viewport", content: "width=device-width, initial-scale=1" },
-  ];
-};
 
 export const links: LinksFunction = () => {
   return [
@@ -63,6 +51,11 @@ const Document = ({ children }: DocumentProps) => {
   return (
     <html lang={locale} dir={i18n.dir()}>
       <head>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1"
+        />
         <Meta />
         <Links />
       </head>
