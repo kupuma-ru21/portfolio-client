@@ -2,13 +2,22 @@ import React, { useEffect } from "react";
 import { withEmotionCache } from "@emotion/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import {
+  json,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
-import { MetaFunction, LinksFunction } from "@remix-run/node"; // Depends on the runtime you choose
+import {
+  MetaFunction,
+  LinksFunction,
+  LoaderFunctionArgs,
+} from "@remix-run/node"; // Depends on the runtime you choose
+import i18next from "~/i18next.server";
+import { useTranslation } from "react-i18next";
+import { useChangeLanguage } from "remix-i18next/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -29,12 +38,31 @@ export const links: LinksFunction = () => {
   ];
 };
 
+export async function loader({ request }: LoaderFunctionArgs) {
+  const locale = await i18next.getLocale(request);
+  return json({ locale });
+}
+
+export const handle = {
+  // In the handle export, we can add a i18n key with namespaces our route
+  // will need to load. This key can be a single string or an array of strings.
+  // TIP: In most cases, you should set this to your defaultNS from your i18n config
+  // or if you did not set one, set it to the i18next default namespace "translation"
+  i18n: "common",
+};
+
 interface DocumentProps {
   children: React.ReactNode;
 }
 
 const Document = withEmotionCache(
   ({ children }: DocumentProps, emotionCache) => {
+    // Get the locale from the loader
+    const { locale } = useLoaderData<typeof loader>();
+    const { i18n } = useTranslation();
+
+    useChangeLanguage(locale);
+
     // Only executed on client
     useEffect(() => {
       // re-link sheet container
@@ -50,7 +78,7 @@ const Document = withEmotionCache(
     }, []);
 
     return (
-      <html lang="en">
+      <html lang={locale} dir={i18n.dir()}>
         <head>
           <Meta />
           <Links />
