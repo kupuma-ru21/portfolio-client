@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-import { withEmotionCache } from "@emotion/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import {
   json,
@@ -55,43 +53,27 @@ interface DocumentProps {
   children: React.ReactNode;
 }
 
-const Document = withEmotionCache(
-  ({ children }: DocumentProps, emotionCache) => {
-    // Get the locale from the loader
-    const { locale } = useLoaderData<typeof loader>();
-    const { i18n } = useTranslation();
+const Document = ({ children }: DocumentProps) => {
+  // Get the locale from the loader
+  const { locale } = useLoaderData<typeof loader>();
+  const { i18n } = useTranslation();
 
-    useChangeLanguage(locale);
+  useChangeLanguage(locale);
 
-    // Only executed on client
-    useEffect(() => {
-      // re-link sheet container
-      emotionCache.sheet.container = document.head;
-      // re-inject tags
-      const tags = emotionCache.sheet.tags;
-      emotionCache.sheet.flush();
-      tags.forEach((tag) => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (emotionCache.sheet as any)._insertTag(tag);
-      });
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    return (
-      <html lang={locale} dir={i18n.dir()}>
-        <head>
-          <Meta />
-          <Links />
-        </head>
-        <body>
-          {children}
-          <ScrollRestoration />
-          <Scripts />
-        </body>
-      </html>
-    );
-  }
-);
+  return (
+    <html lang={locale} dir={i18n.dir()}>
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        {children}
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
+};
 
 export default function App() {
   return (
