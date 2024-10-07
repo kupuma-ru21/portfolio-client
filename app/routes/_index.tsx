@@ -19,7 +19,13 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function Index() {
   const { t } = useTranslation("index");
-  return <Button colorScheme="teal">{t("greeting")}</Button>;
+  return (
+    <>
+      <Button colorScheme="teal">{t("greeting")}</Button>
+      <Button colorScheme="teal">{t("test", { val: "va" })}</Button>
+      <Button colorScheme="teal">{t("nested.nestedKey")}</Button>
+    </>
+  );
 }
 
 export const handle = { i18n: "index" };
