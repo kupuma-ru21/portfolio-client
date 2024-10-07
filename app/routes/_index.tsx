@@ -22,8 +22,6 @@ export default function Index() {
   return (
     <>
       <Button colorScheme="teal">{t("greeting")}</Button>
-      <Button colorScheme="teal">{t("test", { val: "va" })}</Button>
-      <Button colorScheme="teal">{t("nested.nestedKey")}</Button>
     </>
   );
 }

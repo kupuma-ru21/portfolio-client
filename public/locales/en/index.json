@@ -1,6 +1,4 @@
 {
   "greeting": "Hello",
-  "pageTitle": "Portfolio",
-  "test": "{{val}}",
-  "nested": { "nestedKey": "nestedKey" }
+  "pageTitle": "Portfolio"
 }
