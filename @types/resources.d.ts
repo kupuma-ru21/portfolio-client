@@ -1,13 +1,14 @@
 interface Resources {
-  common: object;
-  index: {
-    greeting: "Hello";
-    pageTitle: "Portfolio";
-    test: "{{val}}";
-    nested: {
-      nestedKey: "nestedKey";
-    };
-  };
+  "common": {
+    "header": {
+      "resume": "Open Resume",
+      "contact": "Move to contact page"
+    }
+  },
+  "index": {
+    "greeting": "Hello",
+    "pageTitle": "Portfolio"
+  }
 }
 
 export default Resources;

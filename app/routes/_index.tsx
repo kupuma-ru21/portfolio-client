@@ -1,11 +1,10 @@
-import { Button } from "@chakra-ui/react";
 import {
   json,
   type LoaderFunctionArgs,
   type MetaFunction,
 } from "@remix-run/node";
-import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
+import { Header } from "~/components/header/index";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request, "index");
@@ -18,10 +17,9 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 };
 
 export default function Index() {
-  const { t } = useTranslation("index");
   return (
     <>
-      <Button colorScheme="teal">{t("greeting")}</Button>
+      <Header />
     </>
   );
 }
