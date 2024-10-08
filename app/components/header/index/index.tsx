@@ -47,11 +47,11 @@ export const Header = () => {
             iconType={FaFilePdf}
           />
         </abbr>
-        <abbr title={t("header.contact")}>
+        <abbr title={t("header.contact.abbr")}>
           <IconButton
             as={Link}
             to="/contact"
-            aria-label="contact"
+            aria-label={t("header.contact.aria-label")}
             icon={<Icon as={MdOutlineMailOutline} boxSize="24px" />}
             colorScheme="teal"
           />

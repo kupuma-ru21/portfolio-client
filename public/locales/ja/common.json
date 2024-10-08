@@ -1,7 +1,7 @@
 {
   "header": {
     "resume": { "abbr": "職務経歴書を開く", "aria-label": "職務経歴書" },
-    "contact": "問い合わせページへ移動",
+    "contact": { "abbr": "問い合わせページへ移動", "aria-label": "問い合わせ" },
     "menu": {
       "aria-label": "メニュー",
       "change-theme-color": "テーマの色を変更する"

@@ -5,7 +5,10 @@ interface Resources {
         "abbr": "Open Resume",
         "aria-label": "resume"
       },
-      "contact": "Move to contact page",
+      "contact": {
+        "abbr": "Move to contact page",
+        "aria-label": "contact"
+      },
       "menu": {
         "aria-label": "Menu",
         "change-theme-color": "Change theme color"
