@@ -4,7 +4,7 @@ import {
   type MetaFunction,
 } from "@remix-run/node";
 import i18next from "~/i18next.server";
-import { Header } from "~/components/header/index";
+import { Header } from "~/components/header";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request, "index");

@@ -1,6 +1,6 @@
 import { chakra, Icon, IconButton } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
-import { ExternalIconLink } from "../external-icon-link";
+import { ExternalIconLink } from "./external-icon-link";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { Link } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
