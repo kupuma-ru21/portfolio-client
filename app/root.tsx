@@ -9,7 +9,7 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import { type LinksFunction, type LoaderFunctionArgs } from "@remix-run/node"; // Depends on the runtime you choose
-import i18next from "~/i18next.server";
+import i18next from "~/i18n/i18next.server";
 import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "remix-i18next/react";
 

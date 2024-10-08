@@ -3,7 +3,7 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from "@remix-run/node";
-import i18next from "~/i18next.server";
+import i18next from "~/i18n/i18next.server";
 import { Header } from "~/components/header";
 
 export default function Index() {
