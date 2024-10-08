@@ -6,6 +6,14 @@ import {
 import i18next from "~/i18next.server";
 import { Header } from "~/components/header";
 
+export default function Index() {
+  return (
+    <>
+      <Header />
+    </>
+  );
+}
+
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request, "index");
   const title = t("pageTitle");
@@ -15,13 +23,5 @@ export async function loader({ request }: LoaderFunctionArgs) {
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [{ title: data?.title ?? "portfolio" }];
 };
-
-export default function Index() {
-  return (
-    <>
-      <Header />
-    </>
-  );
-}
 
 export const handle = { i18n: "index" };
