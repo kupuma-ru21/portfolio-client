@@ -7,23 +7,18 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
-  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { ExternalIconLink } from "../external-icon-link";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { Link } from "@remix-run/react";
-import { useTranslation } from "react-i18next";
 import { CiMenuBurger } from "react-icons/ci";
+import { useHeader } from "./useHeader";
 
 // TODO: apply i18n to aria-label
 export const Header = () => {
-  const { t } = useTranslation("common");
-  const { toggleColorMode } = useColorMode();
-  const changeThemeColor = () => {
-    toggleColorMode();
-  };
+  const { t, changeThemeColor } = useHeader();
 
   return (
     <chakra.header
