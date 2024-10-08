@@ -12,6 +12,7 @@ import { type LinksFunction, type LoaderFunctionArgs } from "@remix-run/node"; /
 import i18next from "~/i18n/i18next.server";
 import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "remix-i18next/react";
+import { theme } from "./styles";
 
 export const links: LinksFunction = () => {
   return [
@@ -64,7 +65,7 @@ const Document = ({ children }: DocumentProps) => {
 export default function App() {
   return (
     <Document>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Outlet />
       </ChakraProvider>
     </Document>
