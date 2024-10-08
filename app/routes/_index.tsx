@@ -4,14 +4,9 @@ import {
   type MetaFunction,
 } from "@remix-run/node";
 import i18next from "~/i18n/i18next.server";
-import { Header } from "~/components/header/index";
 
 export default function Index() {
-  return (
-    <>
-      <Header />
-    </>
-  );
+  return <></>;
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {

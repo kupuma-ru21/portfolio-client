@@ -13,6 +13,7 @@ import i18next from "~/i18n/i18next.server";
 import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "remix-i18next/react";
 import { theme } from "./styles";
+import { Header } from "./components/header/index";
 
 export const links: LinksFunction = () => {
   return [
@@ -66,6 +67,7 @@ export default function App() {
   return (
     <Document>
       <ChakraProvider theme={theme}>
+        <Header />
         <Outlet />
       </ChakraProvider>
     </Document>
