@@ -1,6 +1,10 @@
 {
   "header": {
     "resume": "職務経歴書を開く",
-    "contact": "問い合わせページへ移動"
+    "contact": "問い合わせページへ移動",
+    "menu": {
+      "aria-label": "メニュー",
+      "change-theme-color": "テーマの色を変更する"
+    }
   }
 }
