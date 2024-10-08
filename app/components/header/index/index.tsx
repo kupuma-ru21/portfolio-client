@@ -16,7 +16,6 @@ import { Link } from "@remix-run/react";
 import { CiMenuBurger } from "react-icons/ci";
 import { useHeader } from "./useHeader";
 
-// TODO: apply i18n to aria-label
 export const Header = () => {
   const { t, changeThemeColor } = useHeader();
 
@@ -41,10 +40,10 @@ export const Header = () => {
           aria-label="linkedin"
           iconType={FaLinkedin}
         />
-        <abbr title={t("header.resume")}>
+        <abbr title={t("header.resume.abbr")}>
           <ExternalIconLink
             href="/resume.pdf"
-            aria-label="resume"
+            aria-label={t("header.resume.aria-label")}
             iconType={FaFilePdf}
           />
         </abbr>

@@ -1,7 +1,10 @@
 interface Resources {
   "common": {
     "header": {
-      "resume": "Open Resume",
+      "resume": {
+        "abbr": "Open Resume",
+        "aria-label": "resume"
+      },
       "contact": "Move to contact page",
       "menu": {
         "aria-label": "Menu",
