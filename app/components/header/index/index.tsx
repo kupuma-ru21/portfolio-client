@@ -29,6 +29,20 @@ export const Header = () => {
       top={0}
       bgColor={useColorModeValue("white", "black")}
     >
+      <Menu>
+        <MenuButton
+          as={IconButton}
+          icon={
+            <Icon as={CiMenuBurger} aria-label={t("header.menu.aria-label")} />
+          }
+        />
+        <MenuList>
+          <MenuItem onClick={changeThemeColor}>
+            {t("header.menu.change-theme-color")}
+          </MenuItem>
+        </MenuList>
+      </Menu>
+
       <Flex gap="16px">
         <ExternalIconLink
           href="https://github.com/kupuma-ru21"
@@ -57,20 +71,6 @@ export const Header = () => {
           />
         </abbr>
       </Flex>
-
-      <Menu>
-        <MenuButton
-          as={IconButton}
-          icon={
-            <Icon as={CiMenuBurger} aria-label={t("header.menu.aria-label")} />
-          }
-        />
-        <MenuList>
-          <MenuItem onClick={changeThemeColor}>
-            {t("header.menu.change-theme-color")}
-          </MenuItem>
-        </MenuList>
-      </Menu>
     </chakra.header>
   );
 };
