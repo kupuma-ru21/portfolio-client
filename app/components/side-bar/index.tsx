@@ -1,4 +1,4 @@
-import { Button, Flex } from "@chakra-ui/react";
+import { Button, Flex, useColorModeValue } from "@chakra-ui/react";
 import { SIDE_BAR_WIDTH } from "./constants";
 import { Link } from "@remix-run/react";
 import { useSideBar } from "./useSideBar";
@@ -11,7 +11,7 @@ export const SideBar = () => {
       w={`${SIDE_BAR_WIDTH}px`}
       direction="column"
       gap="8px"
-      bgColor="white"
+      bgColor={useColorModeValue("white", "black")}
       position="fixed"
       h="100%"
       boxShadow="0px 1px 5px 0px rgba(88, 102, 126, 0.13)"
