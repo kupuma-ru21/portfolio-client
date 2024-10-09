@@ -20,8 +20,7 @@ interface Resources {
     }
   },
   "index": {
-    "greeting": "Hello",
-    "pageTitle": "Portfolio"
+    "pageTitle": "Home"
   }
 }
 

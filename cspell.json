@@ -7,7 +7,9 @@
     "isbot",
     "languagedetector",
     "Lngs",
-    "Chakra"
+    "Chakra",
+    "Koichi",
+    "Kimura"
   ],
   "ignorePaths": ["node_modules", "pnpm-lock.yaml", "build"]
 }

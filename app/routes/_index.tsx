@@ -4,6 +4,7 @@ import {
   type MetaFunction,
 } from "@remix-run/node";
 import i18next from "~/i18n/i18next.server";
+import { createMetaTitle } from "~/utils/createMetaTitle";
 
 export default function Index() {
   return (
@@ -152,7 +153,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
-  return [{ title: data?.title ?? "portfolio" }];
+  return [{ title: createMetaTitle(data?.title ?? "") }];
 };
 
 export const handle = { i18n: "index" };
