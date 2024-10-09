@@ -13,6 +13,10 @@ interface Resources {
         "aria-label": "Menu",
         "change-theme-color": "Change theme color"
       }
+    },
+    "side-bar": {
+      "home": "Home",
+      "contact": "Contact"
     }
   },
   "index": {

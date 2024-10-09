@@ -1,8 +1,11 @@
 import { Button, Flex } from "@chakra-ui/react";
-import { SIDE_BAR_LINKS, SIDE_BAR_WIDTH } from "./constants";
+import { SIDE_BAR_WIDTH } from "./constants";
 import { Link } from "@remix-run/react";
+import { useSideBar } from "./useSideBar";
 
 export const SideBar = () => {
+  const { links } = useSideBar();
+
   return (
     <Flex
       w={`${SIDE_BAR_WIDTH}px`}
@@ -15,7 +18,7 @@ export const SideBar = () => {
       py="20px"
       right={0}
     >
-      {SIDE_BAR_LINKS.map((link) => {
+      {links.map((link) => {
         return <Button as={Link} {...link} w="100%" key={link.to} />;
       })}
     </Flex>
