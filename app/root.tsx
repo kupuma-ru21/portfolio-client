@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 import {
   json,
   Links,
@@ -14,6 +14,8 @@ import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "remix-i18next/react";
 import { theme } from "./styles";
 import { Header } from "./components/header/index";
+import { SIDE_BAR_WIDTH } from "./components/side-bar/constants";
+import { SideBar } from "./components/side-bar";
 
 export const links: LinksFunction = () => {
   return [
@@ -68,7 +70,10 @@ export default function App() {
     <Document>
       <ChakraProvider theme={theme}>
         <Header />
-        <Outlet />
+        <SideBar />
+        <Box w={`calc(100dvw - ${SIDE_BAR_WIDTH}px)`}>
+          <Outlet />
+        </Box>
       </ChakraProvider>
     </Document>
   );
