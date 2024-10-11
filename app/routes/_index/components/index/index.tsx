@@ -31,13 +31,14 @@ export const Index = () => {
           Applications I developed at work
         </Heading>
         <Flex direction="column" gap="16px">
-          {appData.map(({ src, title, description, href }) => {
+          {appData.map(({ src, title, description, href, linkText }) => {
             return (
               <AppCard
                 src={src}
                 title={title}
                 description={description}
                 href={href}
+                linkText={linkText}
                 key={title}
               />
             );

@@ -16,11 +16,13 @@ export const AppCard = ({
   title,
   description,
   href,
+  linkText,
 }: {
   src: string;
   title: string;
   description: ReactNode;
   href: string;
+  linkText: string;
 }) => {
   const { noOfLines, showFullDescription } = useAppCard();
 
@@ -50,7 +52,7 @@ export const AppCard = ({
             variant="solid"
             colorScheme="teal"
           >
-            Move to the site
+            {linkText}
           </Button>
         </CardFooter>
       </Stack>
