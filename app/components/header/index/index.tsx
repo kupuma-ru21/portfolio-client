@@ -28,6 +28,7 @@ export const Header = () => {
       position="sticky"
       top={0}
       bgColor={useColorModeValue("white", "black")}
+      zIndex={1}
     >
       <Menu>
         <MenuButton

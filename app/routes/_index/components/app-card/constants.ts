@@ -1,1 +1,1 @@
-export const NO_OFL_INES = 3;
+export const NO_OFL_INES = 2;
