@@ -17,6 +17,7 @@ export const SideBar = () => {
       boxShadow="0px 1px 5px 0px rgba(88, 102, 126, 0.13)"
       py="20px"
       right={0}
+      zIndex={1}
     >
       {links.map((link) => {
         return <Button as={Link} {...link} w="100%" key={link.to} />;
