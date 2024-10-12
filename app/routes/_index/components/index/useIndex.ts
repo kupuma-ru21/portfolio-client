@@ -34,6 +34,14 @@ export const useIndex = () => {
       href: "https://moneykit.net/en/",
       linkText: "Move to company site",
     },
+    {
+      src: "/images/index/softbank.avif",
+      title: "Softbank ",
+      description:
+        "Developed management app of logistics which is a part of the SoftBank Group and provides services aimed at optimizing logistics and supply chains. Specifically, it offers a wide range of solutions related to logistics, such as warehouse management, inventory control, and delivery services, targeting e-commerce companies and retailers. Additionally, SoftBank Logistics utilizes cutting-edge technologies like AI, IoT, and robotics to support efficient logistics operations and improve the business efficiency of companies. For example, it includes automated warehouse systems, real-time inventory tracking, and route optimization for deliveries. Leveraging the technological strength of the SoftBank Group, the company is growing in the field of smart logistics.",
+      href: "https://www.sbfw.co.jp/",
+      linkText: "Move to company site",
+    },
   ];
 
   return { appData };
