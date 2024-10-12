@@ -24,7 +24,7 @@ export const AppCard = ({
   href: string;
   linkText: string;
 }) => {
-  const { noOfLines, showFullDescription } = useAppCard();
+  const { t, noOfLines, showFullDescription } = useAppCard();
 
   return (
     <Card direction="row" overflow="hidden" variant="outline">
@@ -42,7 +42,7 @@ export const AppCard = ({
         </CardBody>
         <CardFooter gap="8px">
           <Button onClick={showFullDescription} w="110px">
-            {noOfLines === undefined ? "Fold" : "Read more"}
+            {noOfLines === undefined ? t("Fold") : t("Read more")}
           </Button>
           <Button
             as="a"

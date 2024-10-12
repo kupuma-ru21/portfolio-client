@@ -3,17 +3,18 @@ import { AppCard } from "../app-card";
 import { useIndex } from "./useIndex";
 
 export const Index = () => {
-  const { appData } = useIndex();
+  const { t, appData } = useIndex();
+
   return (
     <Box py="20px">
       <Flex w="fit-content" m="auto" gap="16px" mb="48px">
         <Heading as="h1" alignContent="center">
           <Text as="span" fontWeight={400}>
-            Hi! I&apos;m{" "}
+            {t("Hi! I'm")}{" "}
           </Text>
-          <Text as="strong">Koichi Kimura,</Text>
+          <Text as="strong">{t("Koichi Kimura,")}</Text>
           <Text as="span" fontWeight={400} display="block">
-            a Frontend developer👋
+            {t("a Frontend developer")} 👋
           </Text>
         </Heading>
         <Image
@@ -28,7 +29,7 @@ export const Index = () => {
       <Divider />
       <Box p="16px">
         <Heading mb="16px" textAlign="center" fontWeight={600}>
-          Applications I developed at work
+          {t("Applications I developed at work")}
         </Heading>
         <Flex direction="column" gap="16px">
           {appData.map(({ src, title, description, href, linkText }) => {

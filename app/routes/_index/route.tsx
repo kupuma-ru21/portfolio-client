@@ -13,7 +13,7 @@ export default function Route() {
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request, "index");
-  const title = t("pageTitle");
+  const title = t("Home");
   return json({ title });
 }
 
