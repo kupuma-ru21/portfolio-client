@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { NO_OFL_INES } from "./constants";
 import { useTranslation } from "react-i18next";
+import { NO_OFL_INES } from "./constants";
 
 export const useAppCard = () => {
   const { t } = useTranslation("index");

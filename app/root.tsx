@@ -1,4 +1,5 @@
 import { Box, ChakraProvider } from "@chakra-ui/react";
+import { type LinksFunction, type LoaderFunctionArgs } from "@remix-run/node"; // Depends on the runtime you choose
 import {
   json,
   Links,
@@ -8,14 +9,13 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
-import { type LinksFunction, type LoaderFunctionArgs } from "@remix-run/node"; // Depends on the runtime you choose
-import i18next from "~/i18n/i18next.server";
 import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "remix-i18next/react";
-import { theme } from "./styles";
+import i18next from "~/i18n/i18next.server";
 import { Header } from "./components/header/index";
-import { SIDE_BAR_WIDTH } from "./components/side-bar/constants";
 import { SideBar } from "./components/side-bar";
+import { SIDE_BAR_WIDTH } from "./components/side-bar/constants";
+import { theme } from "./styles";
 
 export default function App() {
   return (

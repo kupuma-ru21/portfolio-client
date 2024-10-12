@@ -5,10 +5,10 @@ import {
   type MetaFunction,
   redirect,
 } from "@remix-run/node";
+import { Resend } from "resend";
 import i18next from "~/i18n/i18next.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
 import { Contact } from "./components/index";
-import { Resend } from "resend";
 
 export default function Route() {
   return <Contact />;

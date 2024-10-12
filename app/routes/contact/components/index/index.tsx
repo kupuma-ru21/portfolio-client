@@ -7,8 +7,8 @@ import {
   Heading,
   Textarea,
 } from "@chakra-ui/react";
-import { useIndex } from "./useIndex";
 import { Input } from "../input";
+import { useIndex } from "./useIndex";
 
 export const Contact = () => {
   const { t, fetcher } = useIndex();

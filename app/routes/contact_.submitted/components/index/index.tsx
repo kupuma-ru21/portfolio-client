@@ -1,6 +1,6 @@
 import { Box, Button, Heading } from "@chakra-ui/react";
-import { useIndex } from "./useIndex";
 import { Link } from "@remix-run/react";
+import { useIndex } from "./useIndex";
 
 export const ContactSubmitted = () => {
   const { t } = useIndex();

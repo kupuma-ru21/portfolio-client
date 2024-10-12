@@ -11,7 +11,8 @@
     "typecheck": "tsc",
     "spellcheck": "cspell '**'",
     "interface": "i18next-resources-for-ts interface -i ./public/locales/en -o ./@types/resources.d.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "format": "eslint ./app --fix"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.10.1",

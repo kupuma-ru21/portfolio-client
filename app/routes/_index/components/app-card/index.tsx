@@ -1,3 +1,4 @@
+import { type ReactNode } from "react";
 import {
   Button,
   Card,
@@ -8,7 +9,6 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { type ReactNode } from "react";
 import { useAppCard } from "./useAppCard";
 
 export const AppCard = ({
