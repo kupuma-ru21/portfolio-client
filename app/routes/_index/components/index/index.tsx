@@ -7,7 +7,14 @@ export const Index = () => {
 
   return (
     <Box py="20px">
-      <Flex w="fit-content" m="auto" gap="16px" mb="48px">
+      <Flex
+        w="fit-content"
+        m="auto"
+        gap="16px"
+        mb="48px"
+        direction={{ base: "column", md: "initial" }}
+        alignItems={{ base: "center", md: "initial" }}
+      >
         <Heading as="h1" alignContent="center">
           <Text as="span" fontWeight={400}>
             {t("Hi! I'm")}{" "}

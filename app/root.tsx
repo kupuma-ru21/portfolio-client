@@ -23,7 +23,7 @@ export default function App() {
       <ChakraProvider theme={theme}>
         <Header />
         <SideBar />
-        <Box w={`calc(100dvw - ${SIDE_BAR_WIDTH}px)`}>
+        <Box w={{ base: undefined, md: `calc(100dvw - ${SIDE_BAR_WIDTH}px)` }}>
           <Outlet />
         </Box>
       </ChakraProvider>

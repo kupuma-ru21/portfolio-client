@@ -27,12 +27,16 @@ export const AppCard = ({
   const { t, noOfLines, showFullDescription } = useAppCard();
 
   return (
-    <Card direction="row" overflow="hidden" variant="outline">
+    <Card
+      direction={{ base: "column", md: "row" }}
+      overflow="hidden"
+      variant="outline"
+    >
       <Image
         src={src}
         alt={title}
         objectFit="cover"
-        maxW="200px"
+        maxW={{ base: "100%", md: "200px" }}
         maxH="200px"
       />
       <Stack>

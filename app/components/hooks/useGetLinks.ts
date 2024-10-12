@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-export const useIndex = () => {
+export const useGetLinks = () => {
   const { t } = useTranslation("common");
 
   const links = [

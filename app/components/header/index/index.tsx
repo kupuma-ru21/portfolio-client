@@ -15,9 +15,11 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { Link } from "@remix-run/react";
 import { CiLight, CiDark, CiMenuBurger } from "react-icons/ci";
 import { useIndex } from "./useIndex";
+import { useGetLinks } from "~/components/hooks/useGetLinks";
 
 export const Header = () => {
   const { t, changeThemeColor } = useIndex();
+  const { links } = useGetLinks();
 
   return (
     <chakra.header
@@ -30,24 +32,30 @@ export const Header = () => {
       bgColor={useColorModeValue("white", "black")}
       zIndex={1}
     >
-      <IconButton
-        onClick={changeThemeColor}
-        icon={<Icon as={useColorModeValue(CiLight, CiDark)} boxSize="24px" />}
-        aria-label={t("header.theme.aria-label")}
-      />
-      <Menu>
-        <MenuButton
-          as={IconButton}
-          icon={
-            <Icon as={CiMenuBurger} aria-label={t("header.menu.aria-label")} />
-          }
+      <Flex gap="8px">
+        <IconButton
+          onClick={changeThemeColor}
+          icon={<Icon as={useColorModeValue(CiLight, CiDark)} boxSize="24px" />}
+          aria-label={t("header.theme.aria-label")}
         />
-        <MenuList>
-          <MenuItem onClick={changeThemeColor}>
-            {t("header.menu.change-theme-color")}
-          </MenuItem>
-        </MenuList>
-      </Menu>
+        <Menu>
+          <MenuButton
+            display={{ base: "block", md: "none" }}
+            as={IconButton}
+            icon={
+              <Icon
+                as={CiMenuBurger}
+                aria-label={t("header.menu.aria-label")}
+              />
+            }
+          />
+          <MenuList display={{ base: "block", md: "none" }}>
+            {links.map((link) => {
+              return <MenuItem as={Link} {...link} key={link.to} />;
+            })}
+          </MenuList>
+        </Menu>
+      </Flex>
       <Flex gap="16px">
         <ExternalIconLink
           href="https://github.com/kupuma-ru21"

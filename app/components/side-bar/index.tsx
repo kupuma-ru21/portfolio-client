@@ -1,13 +1,14 @@
 import { Button, Flex, useColorModeValue } from "@chakra-ui/react";
 import { SIDE_BAR_WIDTH } from "./constants";
 import { Link } from "@remix-run/react";
-import { useIndex } from "./useIndex";
+import { useGetLinks } from "../hooks/useGetLinks";
 
 export const SideBar = () => {
-  const { links } = useIndex();
+  const { links } = useGetLinks();
 
   return (
     <Flex
+      display={{ base: "none", md: "flex" }}
       w={`${SIDE_BAR_WIDTH}px`}
       direction="column"
       gap="8px"
