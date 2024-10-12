@@ -54,6 +54,7 @@ module.exports = {
         alphabetize: { order: "asc" },
       },
     ],
+    "no-console": ["error", { allow: ["warn", "error"] }],
   },
 
   overrides: [
