@@ -41,7 +41,7 @@ export const useIndex = () => {
     },
     {
       src: "/images/index/softbank.avif",
-      title: "Softbank ",
+      title: "Logistics app",
       description: t("descriptionAboutSbLogistics"),
       href: "https://www.sbfw.co.jp/",
       linkText: t("Move to company site"),
