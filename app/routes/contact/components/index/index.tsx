@@ -33,11 +33,11 @@ export const Contact = () => {
           </FormControl>
           <FormControl>
             <FormLabel>{t("Subject")}</FormLabel>
-            <Input />
+            <Input name="subject" />
           </FormControl>
           <FormControl>
             <FormLabel>{t("Content")}</FormLabel>
-            <Textarea isRequired h="350px" />
+            <Textarea name="content" isRequired h="350px" />
           </FormControl>
         </Flex>
         <Button type="submit" size="lg" colorScheme="teal">

@@ -3,10 +3,12 @@ import {
   json,
   type LoaderFunctionArgs,
   type MetaFunction,
+  redirect,
 } from "@remix-run/node";
 import i18next from "~/i18n/i18next.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
 import { Contact } from "./components/index";
+import { Resend } from "resend";
 
 export default function Route() {
   return <Contact />;
@@ -14,7 +16,18 @@ export default function Route() {
 
 export async function action({ request }: ActionFunctionArgs) {
   const body = await request.formData();
-  return { email: String(body.get("email")) };
+  try {
+    // Ref: https://resend.com/docs/send-with-remix
+    await new Resend(import.meta.env.RESEND_API_KEY).emails.send({
+      from: `${String(body.get("email"))} <onboarding@resend.dev>`,
+      to: ["tech.kupumaru@gmail.com"],
+      subject: String(body.get("subject")),
+      html: `<p>${String(body.get("content"))}</p>`,
+    });
+    return redirect("/");
+  } catch (error) {
+    throw new Response(JSON.stringify({ error }), { status: 500 });
+  }
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
