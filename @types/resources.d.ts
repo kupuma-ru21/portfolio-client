@@ -27,7 +27,12 @@ interface Resources {
     "Email address": "Email address",
     "Subject": "Subject",
     "Content": "Content",
-    "Submit": "Submit"
+    "Submit": "Submit",
+    "submitted": {
+      "title": "Thank you for your message!",
+      "content": "Your message has been sent.",
+      "move-to-home": "Move to home"
+    }
   },
   "index": {
     "Home": "Home",

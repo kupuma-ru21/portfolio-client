@@ -3,5 +3,10 @@
   "Email address": "メールアドレス",
   "Subject": "件名",
   "Content": "内容",
-  "Submit": "送信"
+  "Submit": "送信",
+  "submitted": {
+    "title": "メッセージありがとうございます！",
+    "content": "メッセージを送信しました。",
+    "move-to-home": "ホームへ移動"
+  }
 }
