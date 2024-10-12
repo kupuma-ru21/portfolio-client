@@ -1,10 +1,10 @@
 import { Button, Flex, useColorModeValue } from "@chakra-ui/react";
 import { SIDE_BAR_WIDTH } from "./constants";
 import { Link } from "@remix-run/react";
-import { useSideBar } from "./useSideBar";
+import { useIndex } from "./useIndex";
 
 export const SideBar = () => {
-  const { links } = useSideBar();
+  const { links } = useIndex();
 
   return (
     <Flex

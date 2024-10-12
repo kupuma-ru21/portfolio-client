@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-export const useSideBar = () => {
+export const useIndex = () => {
   const { t } = useTranslation("common");
 
   const links = [
