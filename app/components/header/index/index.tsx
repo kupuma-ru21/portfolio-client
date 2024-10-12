@@ -14,10 +14,10 @@ import { ExternalIconLink } from "../external-icon-link";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { Link } from "@remix-run/react";
 import { CiMenuBurger } from "react-icons/ci";
-import { useHeader } from "./useHeader";
+import { useIndex } from "./useIndex";
 
 export const Header = () => {
-  const { t, changeThemeColor } = useHeader();
+  const { t, changeThemeColor } = useIndex();
 
   return (
     <chakra.header

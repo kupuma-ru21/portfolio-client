@@ -1,7 +1,7 @@
 import { useColorMode } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 
-export const useHeader = () => {
+export const useIndex = () => {
   const { t } = useTranslation("common");
 
   const { toggleColorMode } = useColorMode();
