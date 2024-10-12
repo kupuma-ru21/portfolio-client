@@ -13,7 +13,7 @@ import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { ExternalIconLink } from "../external-icon-link";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { Link } from "@remix-run/react";
-import { CiMenuBurger } from "react-icons/ci";
+import { CiLight, CiDark, CiMenuBurger } from "react-icons/ci";
 import { useIndex } from "./useIndex";
 
 export const Header = () => {
@@ -30,6 +30,11 @@ export const Header = () => {
       bgColor={useColorModeValue("white", "black")}
       zIndex={1}
     >
+      <IconButton
+        onClick={changeThemeColor}
+        icon={<Icon as={useColorModeValue(CiLight, CiDark)} boxSize="24px" />}
+        aria-label={t("header.theme.aria-label")}
+      />
       <Menu>
         <MenuButton
           as={IconButton}
@@ -43,7 +48,6 @@ export const Header = () => {
           </MenuItem>
         </MenuList>
       </Menu>
-
       <Flex gap="16px">
         <ExternalIconLink
           href="https://github.com/kupuma-ru21"

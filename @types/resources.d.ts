@@ -9,6 +9,9 @@ interface Resources {
         "abbr": "Move to contact page",
         "aria-label": "contact"
       },
+      "theme": {
+        "aria-label": "theme"
+      },
       "menu": {
         "aria-label": "Menu",
         "change-theme-color": "Change theme color"
