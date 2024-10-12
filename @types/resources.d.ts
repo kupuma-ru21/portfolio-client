@@ -22,6 +22,13 @@ interface Resources {
       "contact": "Contact"
     }
   },
+  "contact": {
+    "Contact": "Contact",
+    "Email address": "Email address",
+    "Subject": "Subject",
+    "Content": "Content",
+    "Submit": "Submit"
+  },
   "index": {
     "Home": "Home",
     "Hi! I'm": "Hi! I'm",

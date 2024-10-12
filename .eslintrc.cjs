@@ -4,6 +4,7 @@
  * and should modify this configuration to best suit your team's needs.
  */
 
+// TODO: Add more rules as needed
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
