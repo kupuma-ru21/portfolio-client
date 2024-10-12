@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 
 export const useIndex = () => {
   const { t } = useTranslation("index");
-  // TODO: apply i18n
   const appData = [
     {
       src: "/images/index/sorajima.avif",
