@@ -1,7 +1,15 @@
+import { useRouteLoaderData } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
+import { LOCALES } from "~/constants";
+import { type loader } from "~/root";
+import { getPathByLocale } from "./utils";
 
 export const useIndex = () => {
   const { t } = useTranslation("index");
+
+  const routeLoaderData = useRouteLoaderData<typeof loader>("root");
+  const locale = routeLoaderData?.locale ?? LOCALES.en;
+
   const appData = [
     {
       src: "/images/index/sorajima.avif",
@@ -14,8 +22,7 @@ export const useIndex = () => {
       src: "/images/index/buysell.avif",
       title: "BuySell",
       description: t("descriptionAboutBuySellApp"),
-      // TODO: switch ja or en depending on the language of the user
-      href: "https://buysell-technologies.com/en/",
+      href: `https://buysell-technologies.com/${getPathByLocale(locale)}`,
       linkText: t("Move to company site"),
     },
     {
@@ -29,8 +36,7 @@ export const useIndex = () => {
       src: "/images/index/sony-bank.avif",
       title: "Sony bank",
       description: t("descriptionAboutSonyBank"),
-      // TODO: switch ja or en depending on the language of the user
-      href: "https://moneykit.net/en/",
+      href: `https://moneykit.net/${getPathByLocale(locale)}`,
       linkText: t("Move to company site"),
     },
     {
