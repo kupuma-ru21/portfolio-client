@@ -10,7 +10,9 @@
     "Chakra",
     "Koichi",
     "Kimura",
-    "buysell"
+    "buysell",
+    "Sorajima",
+    "Toon"
   ],
   "ignorePaths": ["node_modules", "pnpm-lock.yaml", "build"]
 }
