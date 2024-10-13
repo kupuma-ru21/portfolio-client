@@ -1,5 +1,5 @@
-import { Box, Button, Heading } from "@chakra-ui/react";
-import { Link } from "@remix-run/react";
+import { Box, Heading } from "@chakra-ui/react";
+import { MoveToHomeButton } from "~/components/move-to-home-button";
 import { useIndex } from "./useIndex";
 
 export const NotFound = () => {
@@ -10,10 +10,7 @@ export const NotFound = () => {
       <Heading as="h1" mb="56px">
         {t("page-not-found")}
       </Heading>
-      {/* refactor */}
-      <Button as={Link} to="/" colorScheme="teal" size="lg">
-        {t("move-to-home")}
-      </Button>
+      <MoveToHomeButton>{t("move-to-home")}</MoveToHomeButton>
     </Box>
   );
 };

@@ -1,5 +1,5 @@
-import { Box, Button, Heading } from "@chakra-ui/react";
-import { Link } from "@remix-run/react";
+import { Box, Heading } from "@chakra-ui/react";
+import { MoveToHomeButton } from "~/components/move-to-home-button";
 import { useIndex } from "./useIndex";
 
 export const ContactSubmitted = () => {
@@ -17,9 +17,7 @@ export const ContactSubmitted = () => {
       >
         {t("submitted.content")}
       </Heading>
-      <Button as={Link} to="/" colorScheme="teal" size="lg">
-        {t("submitted.move-to-home")}
-      </Button>
+      <MoveToHomeButton>{t("submitted.move-to-home")}</MoveToHomeButton>
     </Box>
   );
 };
