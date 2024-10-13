@@ -49,6 +49,10 @@ interface Resources {
     "Move to company site": "Move to company site",
     "Fold": "Fold",
     "Read more": "Read more"
+  },
+  "not-found": {
+    "page-not-found": "Page not found",
+    "move-to-home": "Move to home"
   }
 }
 
