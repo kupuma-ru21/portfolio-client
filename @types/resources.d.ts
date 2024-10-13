@@ -1,4 +1,9 @@
 interface Resources {
+  "about": {
+    "About": "About",
+    "description": "Let me introduce myself!",
+    "I like to do": "I like to do"
+  },
   "common": {
     "header": {
       "resume": {
@@ -19,7 +24,8 @@ interface Resources {
     },
     "side-bar": {
       "home": "Home",
-      "contact": "Contact"
+      "contact": "Contact",
+      "about": "About"
     }
   },
   "contact": {

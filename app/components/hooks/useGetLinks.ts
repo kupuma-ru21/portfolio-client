@@ -6,6 +6,7 @@ export const useGetLinks = () => {
   const links = [
     { to: "/", children: t("side-bar.home") },
     { to: "/contact", children: t("side-bar.contact") },
+    { to: "/about", children: t("side-bar.about") },
   ];
 
   return { links };

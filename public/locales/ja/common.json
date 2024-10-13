@@ -8,5 +8,5 @@
       "change-theme-color": "テーマの色を変更する"
     }
   },
-  "side-bar": { "home": "ホーム", "contact": "問い合わせ" }
+  "side-bar": { "home": "ホーム", "contact": "問い合わせ", "about": "about" }
 }

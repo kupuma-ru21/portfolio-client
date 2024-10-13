@@ -8,5 +8,5 @@
       "change-theme-color": "Change theme color"
     }
   },
-  "side-bar": { "home": "Home", "contact": "Contact" }
+  "side-bar": { "home": "Home", "contact": "Contact", "about": "About" }
 }
