@@ -12,7 +12,8 @@
     "Kimura",
     "buysell",
     "Sorajima",
-    "Toon"
+    "Toon",
+    "vite"
   ],
   "ignorePaths": ["node_modules", "pnpm-lock.yaml", "build"]
 }
