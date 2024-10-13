@@ -1,6 +1,6 @@
 import { type PropsWithChildren } from "react";
 import { Button } from "@chakra-ui/react";
-import { Link } from "@remix-run/react";
+import { Link } from "./link";
 
 export const MoveToHomeButton = ({ children }: PropsWithChildren) => {
   return (

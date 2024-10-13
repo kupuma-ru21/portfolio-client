@@ -1,6 +1,6 @@
 import { Button, Flex, useColorModeValue } from "@chakra-ui/react";
-import { Link } from "@remix-run/react";
 import { useGetLinks } from "../hooks/useGetLinks";
+import { Link } from "../link";
 import { SIDE_BAR_WIDTH } from "./constants";
 
 export const SideBar = () => {

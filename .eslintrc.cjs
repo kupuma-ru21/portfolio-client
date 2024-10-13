@@ -55,6 +55,19 @@ module.exports = {
       },
     ],
     "no-console": ["error", { allow: ["warn", "error"] }],
+    "no-restricted-imports": [
+      "error",
+      {
+        paths: [
+          {
+            name: "@remix-run/react",
+            importNames: ["Link"],
+            message:
+              "Please use the custom Link component from 'app/components/shared/Link/index.tsx' instead.",
+          },
+        ],
+      },
+    ],
   },
 
   overrides: [

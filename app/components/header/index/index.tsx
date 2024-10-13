@@ -9,11 +9,11 @@ import {
   MenuList,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Link } from "@remix-run/react";
 import { CiLight, CiDark, CiMenuBurger } from "react-icons/ci";
 import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { useGetLinks } from "~/components/hooks/useGetLinks";
+import { Link } from "~/components/link";
 import { ExternalIconLink } from "../external-icon-link";
 import { useIndex } from "./useIndex";
 
