@@ -24,7 +24,7 @@ export async function action({ request }: ActionFunctionArgs) {
       subject: String(body.get("subject")),
       html: `<p>${String(body.get("content"))}</p>`,
     });
-    return redirect("/");
+    return redirect("/contact/submitted");
   } catch (error) {
     throw new Response(JSON.stringify({ error }), { status: 500 });
   }
