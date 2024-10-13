@@ -8,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
+  useNavigation,
 } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "remix-i18next/react";
@@ -18,12 +19,22 @@ import { SIDE_BAR_WIDTH } from "./components/side-bar/constants";
 import { theme } from "./styles";
 
 export default function App() {
+  const navigation = useNavigation();
   return (
     <Document>
       <ChakraProvider theme={theme}>
         <Header />
         <SideBar />
-        <Box w={{ base: undefined, md: `calc(100dvw - ${SIDE_BAR_WIDTH}px)` }}>
+        <Box
+          w={{ base: undefined, md: `calc(100dvw - ${SIDE_BAR_WIDTH}px)` }}
+          {...(navigation.state === "loading"
+            ? {
+                opacity: 0.25,
+                transition: "opacity 200ms",
+                transitionDelay: "200ms",
+              }
+            : {})}
+        >
           <Outlet />
         </Box>
       </ChakraProvider>
