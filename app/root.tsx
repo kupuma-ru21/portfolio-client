@@ -1,4 +1,4 @@
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import { Box, ChakraProvider, Heading } from "@chakra-ui/react";
 import { type LinksFunction, type LoaderFunctionArgs } from "@remix-run/node"; // Depends on the runtime you choose
 import {
   json,
@@ -9,6 +9,8 @@ import {
   ScrollRestoration,
   useLoaderData,
   useNavigation,
+  useRouteError,
+  useRouteLoaderData,
 } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "remix-i18next/react";
@@ -16,12 +18,17 @@ import i18next from "~/i18n/i18next.server";
 import { Header } from "./components/header/index";
 import { SideBar } from "./components/side-bar";
 import { SIDE_BAR_WIDTH } from "./components/side-bar/constants";
+import { LOCALES } from "./constants";
 import { theme } from "./styles";
 
 export default function App() {
   const navigation = useNavigation();
+
+  const { locale } = useLoaderData<typeof loader>();
+  const { i18n } = useTranslation();
+
   return (
-    <Document>
+    <Document locale={locale} dir={i18n.dir()}>
       <ChakraProvider theme={theme}>
         <Header />
         <SideBar />
@@ -41,6 +48,36 @@ export default function App() {
     </Document>
   );
 }
+// Ref: https://remix.run/docs/en/main/guides/errors
+export function ErrorBoundary() {
+  const error = useRouteError();
+  console.error(error);
+
+  // Ref: https://sergiodxa.com/tutorials/access-remix-s-loader-data-from-a-root-errorboundary
+  const data = useRouteLoaderData<typeof loader>("root");
+  const { i18n, t } = useTranslation("root");
+
+  return (
+    <Document locale={data?.locale ?? LOCALES.en} dir={i18n.dir()}>
+      <ChakraProvider theme={theme}>
+        <Header />
+        <SideBar />
+        <Box
+          w={{ base: undefined, md: `calc(100dvw - ${SIDE_BAR_WIDTH}px)` }}
+          pt="32px"
+          textAlign="center"
+        >
+          <Heading as="h1" mb="32px">
+            {t("Something went wrong")}
+          </Heading>
+          <Heading fontWeight={600} fontSize="3xl">
+            {t("Try reload the page")}
+          </Heading>
+        </Box>
+      </ChakraProvider>
+    </Document>
+  );
+}
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const locale = await i18next.getLocale(request);
@@ -49,17 +86,15 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 interface DocumentProps {
   children: React.ReactNode;
+  locale: string;
+  dir: string;
 }
 
-const Document = ({ children }: DocumentProps) => {
-  // Get the locale from the loader
-  const { locale } = useLoaderData<typeof loader>();
-  const { i18n } = useTranslation();
-
+const Document = ({ children, locale, dir }: DocumentProps) => {
   useChangeLanguage(locale);
 
   return (
-    <html lang={locale} dir={i18n.dir()}>
+    <html lang={locale} dir={dir}>
       <head>
         <meta charSet="utf-8" />
         <meta

@@ -53,6 +53,10 @@ interface Resources {
   "not-found": {
     "page-not-found": "Page not found",
     "move-to-home": "Move to home"
+  },
+  "root": {
+    "Something went wrong": "Something went wrong",
+    "Try reload the page": "Try reload the page"
   }
 }
 
