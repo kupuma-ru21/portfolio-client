@@ -14,6 +14,7 @@ import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { useGetLinks } from "~/components/hooks/useGetLinks";
 import { Link } from "~/components/link";
+import { NavLink } from "~/components/nav-link";
 import { ExternalIconLink } from "../external-icon-link";
 import { useIndex } from "./useIndex";
 
@@ -51,7 +52,7 @@ export const Header = () => {
           />
           <MenuList display={{ base: "block", md: "none" }}>
             {links.map((link) => {
-              return <MenuItem as={Link} {...link} key={link.to} />;
+              return <MenuItem as={NavLink} {...link} key={link.to} />;
             })}
           </MenuList>
         </Menu>

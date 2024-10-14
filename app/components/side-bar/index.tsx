@@ -1,6 +1,6 @@
 import { Button, Flex, useColorModeValue } from "@chakra-ui/react";
 import { useGetLinks } from "../hooks/useGetLinks";
-import { Link } from "../link";
+import { NavLink } from "../nav-link";
 import { SIDE_BAR_WIDTH } from "./constants";
 
 export const SideBar = () => {
@@ -21,7 +21,7 @@ export const SideBar = () => {
       zIndex={1}
     >
       {links.map((link) => {
-        return <Button as={Link} {...link} w="100%" key={link.to} />;
+        return <Button as={NavLink} {...link} w="100%" key={link.to} />;
       })}
     </Flex>
   );
