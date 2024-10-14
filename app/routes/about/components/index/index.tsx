@@ -30,29 +30,24 @@ export const About = () => {
           <Flex alignItems="center" gap="16px" mb="8px">
             <ListIcon boxSize="32px" as={FaLaptop} color="green.500" m={0} />
             <Heading as="h4" mb="16px" m={0} fontWeight={500}>
-              Software development
+              {t("software development.title")}
             </Heading>
           </Flex>
-          <Text>
-            I'm especially interested in how to improve maintainability and
-            performance. For example, I've used just avif images in this project
-            cuz it's better in performance than jpg, png and things like that.
-          </Text>
+          <Text>{t("software development.description")}</Text>
         </ListItem>
         <ListItem>
           <Flex alignItems="center" gap="16px" mb="8px">
             <ListIcon boxSize="32px" as={FaBook} color="green.500" m={0} />
             <Heading as="h4" mb="16px" m={0} fontWeight={500}>
-              Reading comics and watching anime
+              {t("reading comics and watching anime.title")}
             </Heading>
           </Flex>
           <Text>
-            I'm a big fan of anime and comics. I've read countless comics and
-            anime.
+            {t("reading comics and watching anime.description1")}
             <br />
-            Anime like below are my favorite:
+            {t("reading comics and watching anime.description2")}
             <br />
-            Naruto, One Piece, Attack on Titan, PSYCHO-PASS and so on.
+            {t("reading comics and watching anime.description3")}
           </Text>
         </ListItem>
         <ListItem>
@@ -64,14 +59,10 @@ export const About = () => {
               m={0}
             />
             <Heading as="h4" mb="16px" m={0} fontWeight={500}>
-              Going to restaurant
+              {t("going to a restaurant.title")}
             </Heading>
           </Flex>
-          <Text>
-            I love to eat a food from other countries cuz through the food, I
-            can learn about the culture of the country. It really broadens my
-            horizons.
-          </Text>
+          <Text>{t("going to a restaurant.description")}</Text>
         </ListItem>
       </List>
     </Box>
