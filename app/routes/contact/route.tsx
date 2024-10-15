@@ -20,7 +20,7 @@ export async function action({ request }: ActionFunctionArgs) {
     const Resend = (await import("resend")).Resend;
     await new Resend(import.meta.env.VITE_RESEND_API_KEY).emails.send({
       from: `${String(body.get("email"))} <onboarding@resend.dev>`,
-      to: ["tech.kupumaru@gmail.com"],
+      to: [import.meta.env.VITE_EMAIL],
       subject: String(body.get("subject")),
       html: `<p>${String(body.get("content"))}</p>`,
     });
