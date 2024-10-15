@@ -18,7 +18,7 @@ export async function action({ request }: ActionFunctionArgs) {
   try {
     // Ref: https://resend.com/docs/send-with-remix
     const Resend = (await import("resend")).Resend;
-    await new Resend(import.meta.env.RESEND_API_KEY).emails.send({
+    await new Resend(import.meta.env.VITE_RESEND_API_KEY).emails.send({
       from: `${String(body.get("email"))} <onboarding@resend.dev>`,
       to: ["tech.kupumaru@gmail.com"],
       subject: String(body.get("subject")),
