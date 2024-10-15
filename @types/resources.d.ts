@@ -70,6 +70,9 @@ interface Resources {
     "Fold": "Fold",
     "Read more": "Read more"
   },
+  "login": {
+    "Login": "Login"
+  },
   "not-found": {
     "page-not-found": "Page not found",
     "move-to-home": "Move to home"

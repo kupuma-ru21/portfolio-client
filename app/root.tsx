@@ -8,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
+  useMatches,
   useNavigation,
   useRouteError,
   useRouteLoaderData,
@@ -27,13 +28,29 @@ export default function App() {
   const { locale } = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
 
+  const matches = useMatches();
+  const isHideGlobalLayout = matches.some((match) => {
+    // FIXME: don't wanna use "as"
+    const handle = match.handle as { isHideGlobalLayout: boolean } | undefined;
+    return handle?.isHideGlobalLayout;
+  });
+
   return (
     <Document locale={locale} dir={i18n.dir()}>
       <ChakraProvider theme={theme}>
-        <Header />
-        <SideBar />
+        {isHideGlobalLayout ? null : (
+          <>
+            <Header />
+            <SideBar />
+          </>
+        )}
         <Box
-          w={{ base: undefined, md: `calc(100dvw - ${SIDE_BAR_WIDTH}px)` }}
+          w={{
+            base: undefined,
+            md: isHideGlobalLayout
+              ? undefined
+              : `calc(100dvw - ${SIDE_BAR_WIDTH}px)`,
+          }}
           {...(navigation.state === "loading"
             ? {
                 opacity: 0.25,
