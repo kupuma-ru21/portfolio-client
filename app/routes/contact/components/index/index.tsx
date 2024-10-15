@@ -1,4 +1,5 @@
 import {
+  chakra,
   Box,
   Button,
   Flex,
@@ -12,7 +13,7 @@ import { Input } from "../input";
 import { useIndex } from "./useIndex";
 
 export const Contact = () => {
-  const { t } = useIndex();
+  const { t, isSubmitting } = useIndex();
 
   return (
     <Box py="20px">
@@ -20,30 +21,32 @@ export const Contact = () => {
         {t("Contact")}
       </Heading>
       <Form method="POST" style={{ textAlign: "center" }}>
-        <Flex
-          direction="column"
-          justifyContent="center"
-          w="fit-content"
-          m="auto"
-          gap="24px"
-          mb="54px"
-        >
-          <FormControl>
-            <FormLabel>{t("Email address")}</FormLabel>
-            <Input type="email" name="email" />
-          </FormControl>
-          <FormControl>
-            <FormLabel>{t("Subject")}</FormLabel>
-            <Input name="subject" />
-          </FormControl>
-          <FormControl>
-            <FormLabel>{t("Content")}</FormLabel>
-            <Textarea name="content" isRequired h="350px" />
-          </FormControl>
-        </Flex>
-        <Button type="submit" size="lg" colorScheme="teal">
-          {t("Submit")}
-        </Button>
+        <chakra.fieldset disabled={isSubmitting}>
+          <Flex
+            direction="column"
+            justifyContent="center"
+            w="fit-content"
+            m="auto"
+            gap="24px"
+            mb="54px"
+          >
+            <FormControl>
+              <FormLabel>{t("Email address")}</FormLabel>
+              <Input type="email" name="email" />
+            </FormControl>
+            <FormControl>
+              <FormLabel>{t("Subject")}</FormLabel>
+              <Input name="subject" />
+            </FormControl>
+            <FormControl>
+              <FormLabel>{t("Content")}</FormLabel>
+              <Textarea name="content" isRequired h="350px" />
+            </FormControl>
+          </Flex>
+          <Button type="submit" size="lg" colorScheme="teal">
+            {t("Submit")}
+          </Button>
+        </chakra.fieldset>
       </Form>
     </Box>
   );
