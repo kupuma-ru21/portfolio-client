@@ -7,18 +7,19 @@ import {
   Heading,
   Textarea,
 } from "@chakra-ui/react";
+import { Form } from "@remix-run/react";
 import { Input } from "../input";
 import { useIndex } from "./useIndex";
 
 export const Contact = () => {
-  const { t, fetcher } = useIndex();
+  const { t } = useIndex();
 
   return (
     <Box py="20px">
       <Heading as="h1" textAlign="center" mb="32px">
         {t("Contact")}
       </Heading>
-      <fetcher.Form method="POST" style={{ textAlign: "center" }}>
+      <Form method="POST" style={{ textAlign: "center" }}>
         <Flex
           direction="column"
           justifyContent="center"
@@ -43,7 +44,7 @@ export const Contact = () => {
         <Button type="submit" size="lg" colorScheme="teal">
           {t("Submit")}
         </Button>
-      </fetcher.Form>
+      </Form>
     </Box>
   );
 };
