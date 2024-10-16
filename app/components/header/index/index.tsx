@@ -7,6 +7,7 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Tooltip,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { CiLight, CiDark, CiMenuBurger } from "react-icons/ci";
@@ -68,22 +69,26 @@ export const Header = () => {
           aria-label="linkedin"
           iconType={FaLinkedin}
         />
-        <abbr title={t("header.resume.abbr")}>
-          <ExternalIconLink
-            href="/resume.pdf"
-            aria-label={t("header.resume.aria-label")}
-            iconType={FaFilePdf}
-          />
-        </abbr>
-        <abbr title={t("header.contact.abbr")}>
-          <IconButton
-            as={Link}
-            to="/contact"
-            aria-label={t("header.contact.aria-label")}
-            icon={<Icon as={MdOutlineMailOutline} boxSize="24px" />}
-            colorScheme="teal"
-          />
-        </abbr>
+        <Tooltip label={t("header.resume.abbr")}>
+          <div>
+            <ExternalIconLink
+              href="/resume.pdf"
+              aria-label={t("header.resume.aria-label")}
+              iconType={FaFilePdf}
+            />
+          </div>
+        </Tooltip>
+        <Tooltip label={t("header.contact.abbr")}>
+          <div>
+            <IconButton
+              as={Link}
+              to="/contact"
+              aria-label={t("header.contact.aria-label")}
+              icon={<Icon as={MdOutlineMailOutline} boxSize="24px" />}
+              colorScheme="teal"
+            />
+          </div>
+        </Tooltip>
       </Flex>
     </chakra.header>
   );
