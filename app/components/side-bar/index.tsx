@@ -17,7 +17,7 @@ export const SideBar = () => {
       h="100%"
       boxShadow="0px 1px 5px 0px rgba(88, 102, 126, 0.13)"
       py="20px"
-      right={0}
+      left={0}
       zIndex={1}
     >
       {links.map((link) => {

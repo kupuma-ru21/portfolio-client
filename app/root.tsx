@@ -45,12 +45,7 @@ export default function App() {
           </>
         )}
         <Box
-          w={{
-            base: undefined,
-            md: isHideGlobalLayout
-              ? undefined
-              : `calc(100dvw - ${SIDE_BAR_WIDTH}px)`,
-          }}
+          pl={`${SIDE_BAR_WIDTH}px`}
           {...(navigation.state === "loading"
             ? {
                 opacity: 0.25,
