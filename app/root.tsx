@@ -17,7 +17,7 @@ import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "remix-i18next/react";
 import i18next from "~/i18n/i18next.server";
 import { AdminHeader } from "./components/admin-header/index";
-import { Header } from "./components/header/index";
+import { Header } from "./components/header/user/index";
 import { SideBar } from "./components/side-bar";
 import { SIDE_BAR_WIDTH } from "./components/side-bar/constants";
 import { LOCALES } from "./constants";
