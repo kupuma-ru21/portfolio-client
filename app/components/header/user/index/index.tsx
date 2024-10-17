@@ -10,17 +10,18 @@ import {
   Tooltip,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { CiLight, CiDark, CiMenuBurger } from "react-icons/ci";
+import { CiMenuBurger } from "react-icons/ci";
 import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { useGetLinks } from "~/components/hooks/useGetLinks";
 import { Link } from "~/components/link";
 import { NavLink } from "~/components/nav-link";
+import { SwitchTheme } from "../../switch-theme";
 import { ExternalIconLink } from "../external-icon-link";
 import { useIndex } from "./useIndex";
 
 export const Header = () => {
-  const { t, changeThemeColor } = useIndex();
+  const { t } = useIndex();
   const { links } = useGetLinks();
 
   return (
@@ -35,11 +36,7 @@ export const Header = () => {
       zIndex={1}
     >
       <Flex gap="8px">
-        <IconButton
-          onClick={changeThemeColor}
-          icon={<Icon as={useColorModeValue(CiLight, CiDark)} boxSize="24px" />}
-          aria-label={t("header.theme.aria-label")}
-        />
+        <SwitchTheme />
         <Menu>
           <MenuButton
             display={{ base: "block", md: "none" }}

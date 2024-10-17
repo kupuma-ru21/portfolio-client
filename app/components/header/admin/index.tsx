@@ -7,15 +7,15 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
-import { CiLight, CiDark } from "react-icons/ci";
 import { IoMdHome } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
 import { Link } from "~/components/link";
+import { SwitchTheme } from "../switch-theme";
 import { useIndex } from "./useIndex";
 
 // TODO: refactor with Header component
 export const AdminHeader = () => {
-  const { t, changeThemeColor } = useIndex();
+  const { t } = useIndex();
 
   return (
     <chakra.header
@@ -28,11 +28,7 @@ export const AdminHeader = () => {
       bgColor={useColorModeValue("white", "black")}
       zIndex={1}
     >
-      <IconButton
-        onClick={changeThemeColor}
-        icon={<Icon as={useColorModeValue(CiLight, CiDark)} boxSize="24px" />}
-        aria-label={t("header.theme.aria-label")}
-      />
+      <SwitchTheme />
       <Flex gap="16px">
         <Tooltip label={t("admin-header.Logout")}>
           <Form action="/auth/logout" method="POST">
