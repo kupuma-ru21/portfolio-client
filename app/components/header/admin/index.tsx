@@ -1,33 +1,17 @@
-import {
-  chakra,
-  Flex,
-  Icon,
-  IconButton,
-  Tooltip,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Flex, Icon, IconButton, Tooltip } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
 import { IoMdHome } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
 import { Link } from "~/components/link";
 import { SwitchTheme } from "../switch-theme";
+import { Wrapper } from "../wrapper";
 import { useIndex } from "./useIndex";
 
-// TODO: refactor with Header component
 export const AdminHeader = () => {
   const { t } = useIndex();
 
   return (
-    <chakra.header
-      boxShadow="0px 1px 5px 0px rgba(88, 102, 126, 0.13)"
-      p="8px 16px"
-      display="flex"
-      justifyContent="space-between"
-      position="sticky"
-      top={0}
-      bgColor={useColorModeValue("white", "black")}
-      zIndex={1}
-    >
+    <Wrapper>
       <SwitchTheme />
       <Flex gap="16px">
         <Tooltip label={t("admin-header.Logout")}>
@@ -48,6 +32,6 @@ export const AdminHeader = () => {
           colorScheme="teal"
         />
       </Flex>
-    </chakra.header>
+    </Wrapper>
   );
 };

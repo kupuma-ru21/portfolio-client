@@ -1,5 +1,4 @@
 import {
-  chakra,
   Flex,
   Icon,
   IconButton,
@@ -8,7 +7,6 @@ import {
   MenuItem,
   MenuList,
   Tooltip,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { CiMenuBurger } from "react-icons/ci";
 import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
@@ -17,6 +15,7 @@ import { useGetLinks } from "~/components/hooks/useGetLinks";
 import { Link } from "~/components/link";
 import { NavLink } from "~/components/nav-link";
 import { SwitchTheme } from "../../switch-theme";
+import { Wrapper } from "../../wrapper";
 import { ExternalIconLink } from "../external-icon-link";
 import { useIndex } from "./useIndex";
 
@@ -25,16 +24,7 @@ export const Header = () => {
   const { links } = useGetLinks();
 
   return (
-    <chakra.header
-      boxShadow="0px 1px 5px 0px rgba(88, 102, 126, 0.13)"
-      p="8px 16px"
-      display="flex"
-      justifyContent="space-between"
-      position="sticky"
-      top={0}
-      bgColor={useColorModeValue("white", "black")}
-      zIndex={1}
-    >
+    <Wrapper>
       <Flex gap="8px">
         <SwitchTheme />
         <Menu>
@@ -87,6 +77,6 @@ export const Header = () => {
           </div>
         </Tooltip>
       </Flex>
-    </chakra.header>
+    </Wrapper>
   );
 };
