@@ -12,4 +12,4 @@ export async function loader({ request }: LoaderFunctionArgs) {
   return redirect("/login");
 }
 
-export const handle = { isHideGlobalLayout: true };
+export const handle = { isAdmin: true };

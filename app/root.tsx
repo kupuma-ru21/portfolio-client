@@ -30,16 +30,16 @@ export default function App() {
   const { i18n } = useTranslation();
 
   const matches = useMatches();
-  const isHideGlobalLayout = matches.some((match) => {
+  const isAdmin = matches.some((match) => {
     // FIXME: don't wanna use "as"
-    const handle = match.handle as { isHideGlobalLayout: boolean } | undefined;
-    return handle?.isHideGlobalLayout;
+    const handle = match.handle as { isAdmin: boolean } | undefined;
+    return handle?.isAdmin;
   });
 
   return (
     <Document locale={locale} dir={i18n.dir()}>
       <ChakraProvider theme={theme}>
-        {isHideGlobalLayout ? (
+        {isAdmin ? (
           <AdminHeader />
         ) : (
           <>
