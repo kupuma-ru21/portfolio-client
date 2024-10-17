@@ -8,5 +8,6 @@
       "change-theme-color": "テーマの色を変更する"
     }
   },
+  "admin-header": { "Logout": "ログアウト", "Home": "ホーム" },
   "side-bar": { "home": "ホーム", "contact": "問い合わせ", "about": "about" }
 }

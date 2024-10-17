@@ -36,6 +36,10 @@ interface Resources {
         "change-theme-color": "Change theme color"
       }
     },
+    "admin-header": {
+      "Logout": "Logout",
+      "Home": "Home"
+    },
     "side-bar": {
       "home": "Home",
       "contact": "Contact",
