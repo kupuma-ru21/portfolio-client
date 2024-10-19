@@ -6,7 +6,6 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  Textarea,
   RadioGroup,
   Radio,
   Stack,
@@ -14,6 +13,7 @@ import {
 import { Form } from "@remix-run/react";
 import { useIndex } from "./useIndex";
 import { Input } from "~/components/input";
+import { Textarea } from "~/components/textarea";
 
 export const Admin = () => {
   const { t } = useIndex();
@@ -40,7 +40,7 @@ export const Admin = () => {
             </FormControl>
             <FormControl>
               <FormLabel>{t("Description")}</FormLabel>
-              <Textarea name="description" isRequired h="350px" />
+              <Textarea name="description" />
             </FormControl>
             <FormControl>
               <FormLabel>{t("URL")}</FormLabel>

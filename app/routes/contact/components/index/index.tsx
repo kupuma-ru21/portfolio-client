@@ -6,11 +6,11 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  Textarea,
 } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
 import { useIndex } from "./useIndex";
 import { Input } from "~/components/input";
+import { Textarea } from "~/components/textarea";
 
 export const Contact = () => {
   const { t, isSubmitting } = useIndex();
@@ -40,7 +40,7 @@ export const Contact = () => {
             </FormControl>
             <FormControl>
               <FormLabel>{t("Content")}</FormLabel>
-              <Textarea name="content" isRequired h="350px" />
+              <Textarea name="content" />
             </FormControl>
           </Flex>
           <Button type="submit" size="lg" colorScheme="teal">
