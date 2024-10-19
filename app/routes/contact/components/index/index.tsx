@@ -9,8 +9,8 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
-import { Input } from "../input";
 import { useIndex } from "./useIndex";
+import { Input } from "~/components/input";
 
 export const Contact = () => {
   const { t, isSubmitting } = useIndex();
