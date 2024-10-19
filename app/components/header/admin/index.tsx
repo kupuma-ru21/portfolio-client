@@ -2,10 +2,10 @@ import { Flex, Icon, IconButton, Tooltip } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
 import { IoMdHome } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
-import { Link } from "~/components/link";
 import { SwitchTheme } from "../switch-theme";
 import { Wrapper } from "../wrapper";
 import { useIndex } from "./useIndex";
+import { Link } from "~/components/link";
 
 export const AdminHeader = () => {
   const { t } = useIndex();

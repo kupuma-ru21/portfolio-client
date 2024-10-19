@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
-import { MoveToHomeButton } from "~/components/move-to-home-button";
 import { useIndex } from "./useIndex";
+import { MoveToHomeButton } from "~/components/move-to-home-button";
 
 export const ContactSubmitted = () => {
   const { t } = useIndex();

@@ -1,8 +1,8 @@
 import { useRouteLoaderData } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
+import { getPathByLocale } from "./utils";
 import { LOCALES } from "~/constants";
 import { type loader } from "~/root";
-import { getPathByLocale } from "./utils";
 
 export const useIndex = () => {
   const { t } = useTranslation("index");

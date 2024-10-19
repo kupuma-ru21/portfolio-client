@@ -3,9 +3,9 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from "@remix-run/node";
+import { ContactSubmitted } from "./components/index/index";
 import i18next from "~/i18n/i18next.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
-import { ContactSubmitted } from "./components/index/index";
 
 export default function Route() {
   return <ContactSubmitted />;

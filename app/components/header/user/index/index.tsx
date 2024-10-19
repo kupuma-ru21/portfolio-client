@@ -11,13 +11,13 @@ import {
 import { CiMenuBurger } from "react-icons/ci";
 import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { useGetLinks } from "~/components/hooks/useGetLinks";
-import { Link } from "~/components/link";
-import { NavLink } from "~/components/nav-link";
 import { SwitchTheme } from "../../switch-theme";
 import { Wrapper } from "../../wrapper";
 import { ExternalIconLink } from "../external-icon-link";
 import { useIndex } from "./useIndex";
+import { useGetLinks } from "~/components/hooks/useGetLinks";
+import { Link } from "~/components/link";
+import { NavLink } from "~/components/nav-link";
 
 export const Header = () => {
   const { t } = useIndex();

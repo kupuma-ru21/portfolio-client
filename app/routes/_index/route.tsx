@@ -3,9 +3,9 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from "@remix-run/node";
+import { Index } from "./components/index";
 import i18next from "~/i18n/i18next.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
-import { Index } from "./components/index";
 
 export default function Route() {
   return <Index />;

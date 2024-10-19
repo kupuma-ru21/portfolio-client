@@ -4,10 +4,10 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from "@remix-run/node";
+import { Login } from "./components/index";
 import i18next from "~/i18n/i18next.server";
 import { authenticator } from "~/utils/auth.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
-import { Login } from "./components/index";
 
 export default function Route() {
   return <Login />;

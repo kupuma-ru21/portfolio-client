@@ -5,9 +5,9 @@ import {
   type MetaFunction,
   redirect,
 } from "@remix-run/node";
+import { Contact } from "./components/index";
 import i18next from "~/i18n/i18next.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
-import { Contact } from "./components/index";
 
 export default function Route() {
   return <Contact />;

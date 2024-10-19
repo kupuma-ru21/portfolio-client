@@ -21,10 +21,7 @@ module.exports = {
     es6: true,
   },
   ignorePatterns: ["!**/.server", "!**/.client"],
-
-  // Base config
   extends: ["eslint:recommended"],
-
   rules: {
     "@typescript-eslint/consistent-type-imports": [
       "error",
@@ -69,9 +66,7 @@ module.exports = {
       },
     ],
   },
-
   overrides: [
-    // React
     {
       files: ["**/*.{js,jsx,ts,tsx}"],
       plugins: ["react", "jsx-a11y"],
@@ -82,21 +77,15 @@ module.exports = {
         "plugin:jsx-a11y/recommended",
       ],
       settings: {
-        react: {
-          version: "detect",
-        },
+        react: { version: "detect" },
         formComponents: ["Form"],
         linkComponents: [
           { name: "Link", linkAttribute: "to" },
           { name: "NavLink", linkAttribute: "to" },
         ],
-        "import/resolver": {
-          typescript: {},
-        },
+        "import/resolver": { typescript: {} },
       },
     },
-
-    // Typescript
     {
       files: ["**/*.{ts,tsx}"],
       plugins: ["@typescript-eslint", "import"],
@@ -104,12 +93,8 @@ module.exports = {
       settings: {
         "import/internal-regex": "^~/",
         "import/resolver": {
-          node: {
-            extensions: [".ts", ".tsx"],
-          },
-          typescript: {
-            alwaysTryTypes: true,
-          },
+          node: { extensions: [".ts", ".tsx"] },
+          typescript: { alwaysTryTypes: true },
         },
       },
       extends: [
@@ -118,13 +103,9 @@ module.exports = {
         "plugin:import/typescript",
       ],
     },
-
-    // Node
     {
       files: [".eslintrc.cjs"],
-      env: {
-        node: true,
-      },
+      env: { node: true },
     },
   ],
 };
