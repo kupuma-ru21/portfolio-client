@@ -1,8 +1,9 @@
 import { redirect, type LoaderFunctionArgs } from "@remix-run/node";
+import { Admin } from "./components/index";
 import { getSession } from "~/services/session.server";
 
 export default function Route() {
-  return <>admin</>;
+  return <Admin />;
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {

@@ -18,6 +18,16 @@ interface Resources {
       "description": "I love to eat a food from other countries cuz through the food, I can learn about the culture of the country. It really broadens my horizons."
     }
   },
+  "admin": {
+    "Add Application": "Add Application",
+    "Title": "Title",
+    "Description": "Description",
+    "URL": "URL",
+    "Type of the URL": "Type of the URL",
+    "App": "App",
+    "Company": "Company",
+    "Submit": "Submit"
+  },
   "common": {
     "header": {
       "resume": {
