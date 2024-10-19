@@ -10,28 +10,28 @@ importers:
     dependencies:
       '@chakra-ui/react':
         specifier: ^2.10.3
-        version: 2.10.3(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.1))(@types/react@18.3.11)(react@18.3.1))(@types/react@18.3.11)(framer-motion@11.11.9(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 2.10.3(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314))(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314))(@types/react@18.3.11)(framer-motion@11.11.9(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314))(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
       '@emotion/react':
         specifier: ^11.13.3
-        version: 11.13.3(@types/react@18.3.11)(react@18.3.1)
+        version: 11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
       '@emotion/server':
         specifier: ^11.11.0
         version: 11.11.0
       '@emotion/styled':
         specifier: ^11.13.0
-        version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.1))(@types/react@18.3.11)(react@18.3.1)
+        version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314))(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
       '@remix-run/node':
         specifier: ^2.13.1
         version: 2.13.1(typescript@5.6.3)
       '@remix-run/react':
         specifier: ^2.13.1
-        version: 2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+        version: 2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3)
       '@remix-run/serve':
         specifier: ^2.13.1
         version: 2.13.1(typescript@5.6.3)
       framer-motion:
         specifier: ^11.11.9
-        version: 11.11.9(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 11.11.9(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
       i18next:
         specifier: ^23.16.0
         version: 23.16.0
@@ -51,36 +51,36 @@ importers:
         specifier: ^5.1.17
         version: 5.1.17
       react:
-        specifier: ^18.3.1
-        version: 18.3.1
+        specifier: 18.3.0-canary-a870b2d54-20240314
+        version: 18.3.0-canary-a870b2d54-20240314
       react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: 18.3.0-canary-a870b2d54-20240314
+        version: 18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314)
       react-i18next:
         specifier: ^15.0.3
-        version: 15.0.3(i18next@23.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 15.0.3(i18next@23.16.0)(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
       react-icons:
         specifier: ^5.3.0
-        version: 5.3.0(react@18.3.1)
+        version: 5.3.0(react@18.3.0-canary-a870b2d54-20240314)
       remix-auth:
         specifier: ^3.7.0
-        version: 3.7.0(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3))
+        version: 3.7.0(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3))
       remix-auth-auth0:
         specifier: ^1.10.0
-        version: 1.10.0(@remix-run/server-runtime@2.13.1(typescript@5.6.3))(remix-auth@3.7.0(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3)))
+        version: 1.10.0(@remix-run/server-runtime@2.13.1(typescript@5.6.3))(remix-auth@3.7.0(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3)))
       remix-i18next:
         specifier: ^6.4.1
-        version: 6.4.1(@remix-run/node@2.13.1(typescript@5.6.3))(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(i18next@23.16.0)(react-i18next@15.0.3(i18next@23.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 6.4.1(@remix-run/node@2.13.1(typescript@5.6.3))(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(i18next@23.16.0)(react-i18next@15.0.3(i18next@23.16.0)(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
       resend:
         specifier: ^4.0.0
-        version: 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 4.0.0(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.0
         version: 1.2.0(eslint@9.12.0)
       '@remix-run/dev':
         specifier: ^2.13.1
-        version: 2.13.1(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/serve@2.13.1(typescript@5.6.3))(@types/node@22.7.6)(babel-plugin-macros@3.1.0)(typescript@5.6.3)(vite@5.4.9(@types/node@22.7.6))
+        version: 2.13.1(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(@remix-run/serve@2.13.1(typescript@5.6.3))(@types/node@22.7.6)(babel-plugin-macros@3.1.0)(typescript@5.6.3)(vite@5.4.9(@types/node@22.7.6))
       '@types/react':
         specifier: ^18.3.11
         version: 18.3.11
@@ -3485,10 +3485,10 @@ packages:
     peerDependencies:
       react: ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
 
-  react-dom@18.3.1:
-    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+  react-dom@18.3.0-canary-a870b2d54-20240314:
+    resolution: {integrity: sha512-m56pjWn6kmg0M4GLxtC8A+Uh1AVIc+IESfi1mV810nCoHdMcO/tmhC6pIaWtxHBb3szP0x0p+BXF42nf8lKkVA==}
     peerDependencies:
-      react: ^18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
 
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
@@ -3573,8 +3573,8 @@ packages:
       '@types/react':
         optional: true
 
-  react@18.3.1:
-    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
+  react@18.3.0-canary-a870b2d54-20240314:
+    resolution: {integrity: sha512-/sjBAVN6TJ1G+Ia3hGMaLGZE3w/OKtO6FEzz/wBUKdmK3obyJvxK0FmHGVPpM9nDzrw5f1WJDoPE8nGgkvpKog==}
     engines: {node: '>=0.10.0'}
 
   readable-stream@1.0.34:
@@ -3730,8 +3730,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  scheduler@0.23.2:
-    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+  scheduler@0.24.0-canary-a870b2d54-20240314:
+    resolution: {integrity: sha512-HS8crSVpnKgW1ZlzEA+tahjDjLYGre5D/7d4xmYcTjGw6Lcf8Bi1xbHO5QKz3aUqKNN8+Yhde8FcsuEO82+lug==}
 
   selderee@0.11.0:
     resolution: {integrity: sha512-5TF+l7p4+OsnP8BCCvSyZiSPc4x4//p5uPwK8TCnVPJYRmU2aYKMpOXvw8zM5a5JvuuCGN1jmsMwuU2W02ukfA==}
@@ -4596,64 +4596,64 @@ snapshots:
 
   '@chakra-ui/anatomy@2.3.4': {}
 
-  '@chakra-ui/hooks@2.4.2(react@18.3.1)':
+  '@chakra-ui/hooks@2.4.2(react@18.3.0-canary-a870b2d54-20240314)':
     dependencies:
-      '@chakra-ui/utils': 2.2.2(react@18.3.1)
+      '@chakra-ui/utils': 2.2.2(react@18.3.0-canary-a870b2d54-20240314)
       '@zag-js/element-size': 0.31.1
       copy-to-clipboard: 3.3.3
       framesync: 6.1.2
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
 
-  '@chakra-ui/react@2.10.3(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.1))(@types/react@18.3.11)(react@18.3.1))(@types/react@18.3.11)(framer-motion@11.11.9(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@chakra-ui/react@2.10.3(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314))(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314))(@types/react@18.3.11)(framer-motion@11.11.9(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314))(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)':
     dependencies:
-      '@chakra-ui/hooks': 2.4.2(react@18.3.1)
-      '@chakra-ui/styled-system': 2.12.0(react@18.3.1)
-      '@chakra-ui/theme': 3.4.6(@chakra-ui/styled-system@2.12.0(react@18.3.1))(react@18.3.1)
-      '@chakra-ui/utils': 2.2.2(react@18.3.1)
-      '@emotion/react': 11.13.3(@types/react@18.3.11)(react@18.3.1)
-      '@emotion/styled': 11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.1))(@types/react@18.3.11)(react@18.3.1)
+      '@chakra-ui/hooks': 2.4.2(react@18.3.0-canary-a870b2d54-20240314)
+      '@chakra-ui/styled-system': 2.12.0(react@18.3.0-canary-a870b2d54-20240314)
+      '@chakra-ui/theme': 3.4.6(@chakra-ui/styled-system@2.12.0(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
+      '@chakra-ui/utils': 2.2.2(react@18.3.0-canary-a870b2d54-20240314)
+      '@emotion/react': 11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
+      '@emotion/styled': 11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314))(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
       '@popperjs/core': 2.11.8
       '@zag-js/focus-visible': 0.31.1
       aria-hidden: 1.2.4
-      framer-motion: 11.11.9(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      framer-motion: 11.11.9(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
+      react: 18.3.0-canary-a870b2d54-20240314
+      react-dom: 18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314)
       react-fast-compare: 3.2.2
-      react-focus-lock: 2.13.2(@types/react@18.3.11)(react@18.3.1)
-      react-remove-scroll: 2.6.0(@types/react@18.3.11)(react@18.3.1)
+      react-focus-lock: 2.13.2(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
+      react-remove-scroll: 2.6.0(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
     transitivePeerDependencies:
       - '@types/react'
 
-  '@chakra-ui/styled-system@2.12.0(react@18.3.1)':
+  '@chakra-ui/styled-system@2.12.0(react@18.3.0-canary-a870b2d54-20240314)':
     dependencies:
-      '@chakra-ui/utils': 2.2.2(react@18.3.1)
+      '@chakra-ui/utils': 2.2.2(react@18.3.0-canary-a870b2d54-20240314)
       csstype: 3.1.3
     transitivePeerDependencies:
       - react
 
-  '@chakra-ui/theme-tools@2.2.6(@chakra-ui/styled-system@2.12.0(react@18.3.1))(react@18.3.1)':
+  '@chakra-ui/theme-tools@2.2.6(@chakra-ui/styled-system@2.12.0(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)':
     dependencies:
       '@chakra-ui/anatomy': 2.3.4
-      '@chakra-ui/styled-system': 2.12.0(react@18.3.1)
-      '@chakra-ui/utils': 2.2.2(react@18.3.1)
+      '@chakra-ui/styled-system': 2.12.0(react@18.3.0-canary-a870b2d54-20240314)
+      '@chakra-ui/utils': 2.2.2(react@18.3.0-canary-a870b2d54-20240314)
       color2k: 2.0.3
     transitivePeerDependencies:
       - react
 
-  '@chakra-ui/theme@3.4.6(@chakra-ui/styled-system@2.12.0(react@18.3.1))(react@18.3.1)':
+  '@chakra-ui/theme@3.4.6(@chakra-ui/styled-system@2.12.0(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)':
     dependencies:
       '@chakra-ui/anatomy': 2.3.4
-      '@chakra-ui/styled-system': 2.12.0(react@18.3.1)
-      '@chakra-ui/theme-tools': 2.2.6(@chakra-ui/styled-system@2.12.0(react@18.3.1))(react@18.3.1)
-      '@chakra-ui/utils': 2.2.2(react@18.3.1)
+      '@chakra-ui/styled-system': 2.12.0(react@18.3.0-canary-a870b2d54-20240314)
+      '@chakra-ui/theme-tools': 2.2.6(@chakra-ui/styled-system@2.12.0(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
+      '@chakra-ui/utils': 2.2.2(react@18.3.0-canary-a870b2d54-20240314)
     transitivePeerDependencies:
       - react
 
-  '@chakra-ui/utils@2.2.2(react@18.3.1)':
+  '@chakra-ui/utils@2.2.2(react@18.3.0-canary-a870b2d54-20240314)':
     dependencies:
       '@types/lodash.mergewith': 4.6.9
       lodash.mergewith: 4.6.2
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
 
   '@cspell/cspell-bundled-dicts@8.15.3':
     dependencies:
@@ -4877,17 +4877,17 @@ snapshots:
 
   '@emotion/memoize@0.9.0': {}
 
-  '@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.1)':
+  '@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)':
     dependencies:
       '@babel/runtime': 7.25.7
       '@emotion/babel-plugin': 11.12.0
       '@emotion/cache': 11.13.1
       '@emotion/serialize': 1.3.2
-      '@emotion/use-insertion-effect-with-fallbacks': 1.1.0(react@18.3.1)
+      '@emotion/use-insertion-effect-with-fallbacks': 1.1.0(react@18.3.0-canary-a870b2d54-20240314)
       '@emotion/utils': 1.4.1
       '@emotion/weak-memoize': 0.4.0
       hoist-non-react-statics: 3.3.2
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
     optionalDependencies:
       '@types/react': 18.3.11
     transitivePeerDependencies:
@@ -4910,16 +4910,16 @@ snapshots:
 
   '@emotion/sheet@1.4.0': {}
 
-  '@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.1))(@types/react@18.3.11)(react@18.3.1)':
+  '@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314))(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)':
     dependencies:
       '@babel/runtime': 7.25.7
       '@emotion/babel-plugin': 11.12.0
       '@emotion/is-prop-valid': 1.3.1
-      '@emotion/react': 11.13.3(@types/react@18.3.11)(react@18.3.1)
+      '@emotion/react': 11.13.3(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
       '@emotion/serialize': 1.3.2
-      '@emotion/use-insertion-effect-with-fallbacks': 1.1.0(react@18.3.1)
+      '@emotion/use-insertion-effect-with-fallbacks': 1.1.0(react@18.3.0-canary-a870b2d54-20240314)
       '@emotion/utils': 1.4.1
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
     optionalDependencies:
       '@types/react': 18.3.11
     transitivePeerDependencies:
@@ -4927,9 +4927,9 @@ snapshots:
 
   '@emotion/unitless@0.10.0': {}
 
-  '@emotion/use-insertion-effect-with-fallbacks@1.1.0(react@18.3.1)':
+  '@emotion/use-insertion-effect-with-fallbacks@1.1.0(react@18.3.0-canary-a870b2d54-20240314)':
     dependencies:
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
 
   '@emotion/utils@1.4.1': {}
 
@@ -5228,15 +5228,15 @@ snapshots:
 
   '@popperjs/core@2.11.8': {}
 
-  '@react-email/render@0.0.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@react-email/render@0.0.17(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)':
     dependencies:
       html-to-text: 9.0.5
       js-beautify: 1.15.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 18.3.0-canary-a870b2d54-20240314
+      react-dom: 18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314)
       react-promise-suspense: 0.3.4
 
-  '@remix-run/dev@2.13.1(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/serve@2.13.1(typescript@5.6.3))(@types/node@22.7.6)(babel-plugin-macros@3.1.0)(typescript@5.6.3)(vite@5.4.9(@types/node@22.7.6))':
+  '@remix-run/dev@2.13.1(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(@remix-run/serve@2.13.1(typescript@5.6.3))(@types/node@22.7.6)(babel-plugin-macros@3.1.0)(typescript@5.6.3)(vite@5.4.9(@types/node@22.7.6))':
     dependencies:
       '@babel/core': 7.25.8
       '@babel/generator': 7.25.7
@@ -5249,7 +5249,7 @@ snapshots:
       '@mdx-js/mdx': 2.3.0
       '@npmcli/package-json': 4.0.1
       '@remix-run/node': 2.13.1(typescript@5.6.3)
-      '@remix-run/react': 2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+      '@remix-run/react': 2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3)
       '@remix-run/router': 1.20.0
       '@remix-run/server-runtime': 2.13.1(typescript@5.6.3)
       '@types/mdx': 2.0.13
@@ -5331,14 +5331,14 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.3
 
-  '@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)':
+  '@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3)':
     dependencies:
       '@remix-run/router': 1.20.0
       '@remix-run/server-runtime': 2.13.1(typescript@5.6.3)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-router: 6.27.0(react@18.3.1)
-      react-router-dom: 6.27.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.0-canary-a870b2d54-20240314
+      react-dom: 18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314)
+      react-router: 6.27.0(react@18.3.0-canary-a870b2d54-20240314)
+      react-router-dom: 6.27.0(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
       turbo-stream: 2.4.0
     optionalDependencies:
       typescript: 5.6.3
@@ -6931,13 +6931,13 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@11.11.9(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  framer-motion@11.11.9(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
       tslib: 2.8.0
     optionalDependencies:
       '@emotion/is-prop-valid': 1.3.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 18.3.0-canary-a870b2d54-20240314
+      react-dom: 18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314)
 
   framesync@6.1.2:
     dependencies:
@@ -8284,43 +8284,42 @@ snapshots:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
 
-  react-clientside-effect@1.2.6(react@18.3.1):
+  react-clientside-effect@1.2.6(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
       '@babel/runtime': 7.25.7
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
 
-  react-dom@18.3.1(react@18.3.1):
+  react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
-      loose-envify: 1.4.0
-      react: 18.3.1
-      scheduler: 0.23.2
+      react: 18.3.0-canary-a870b2d54-20240314
+      scheduler: 0.24.0-canary-a870b2d54-20240314
 
   react-fast-compare@3.2.2: {}
 
-  react-focus-lock@2.13.2(@types/react@18.3.11)(react@18.3.1):
+  react-focus-lock@2.13.2(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
       '@babel/runtime': 7.25.7
       focus-lock: 1.3.5
       prop-types: 15.8.1
-      react: 18.3.1
-      react-clientside-effect: 1.2.6(react@18.3.1)
-      use-callback-ref: 1.3.2(@types/react@18.3.11)(react@18.3.1)
-      use-sidecar: 1.1.2(@types/react@18.3.11)(react@18.3.1)
+      react: 18.3.0-canary-a870b2d54-20240314
+      react-clientside-effect: 1.2.6(react@18.3.0-canary-a870b2d54-20240314)
+      use-callback-ref: 1.3.2(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
+      use-sidecar: 1.1.2(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
     optionalDependencies:
       '@types/react': 18.3.11
 
-  react-i18next@15.0.3(i18next@23.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-i18next@15.0.3(i18next@23.16.0)(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
       '@babel/runtime': 7.25.7
       html-parse-stringify: 3.0.1
       i18next: 23.16.0
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
     optionalDependencies:
-      react-dom: 18.3.1(react@18.3.1)
+      react-dom: 18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314)
 
-  react-icons@5.3.0(react@18.3.1):
+  react-icons@5.3.0(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
 
   react-is@16.13.1: {}
 
@@ -8330,49 +8329,47 @@ snapshots:
 
   react-refresh@0.14.2: {}
 
-  react-remove-scroll-bar@2.3.6(@types/react@18.3.11)(react@18.3.1):
+  react-remove-scroll-bar@2.3.6(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
-      react: 18.3.1
-      react-style-singleton: 2.2.1(@types/react@18.3.11)(react@18.3.1)
+      react: 18.3.0-canary-a870b2d54-20240314
+      react-style-singleton: 2.2.1(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
       tslib: 2.8.0
     optionalDependencies:
       '@types/react': 18.3.11
 
-  react-remove-scroll@2.6.0(@types/react@18.3.11)(react@18.3.1):
+  react-remove-scroll@2.6.0(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
-      react: 18.3.1
-      react-remove-scroll-bar: 2.3.6(@types/react@18.3.11)(react@18.3.1)
-      react-style-singleton: 2.2.1(@types/react@18.3.11)(react@18.3.1)
+      react: 18.3.0-canary-a870b2d54-20240314
+      react-remove-scroll-bar: 2.3.6(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
+      react-style-singleton: 2.2.1(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
       tslib: 2.8.0
-      use-callback-ref: 1.3.2(@types/react@18.3.11)(react@18.3.1)
-      use-sidecar: 1.1.2(@types/react@18.3.11)(react@18.3.1)
+      use-callback-ref: 1.3.2(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
+      use-sidecar: 1.1.2(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314)
     optionalDependencies:
       '@types/react': 18.3.11
 
-  react-router-dom@6.27.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-router-dom@6.27.0(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
       '@remix-run/router': 1.20.0
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-router: 6.27.0(react@18.3.1)
+      react: 18.3.0-canary-a870b2d54-20240314
+      react-dom: 18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314)
+      react-router: 6.27.0(react@18.3.0-canary-a870b2d54-20240314)
 
-  react-router@6.27.0(react@18.3.1):
+  react-router@6.27.0(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
       '@remix-run/router': 1.20.0
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
 
-  react-style-singleton@2.2.1(@types/react@18.3.11)(react@18.3.1):
+  react-style-singleton@2.2.1(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
       get-nonce: 1.0.1
       invariant: 2.2.4
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
       tslib: 2.8.0
     optionalDependencies:
       '@types/react': 18.3.11
 
-  react@18.3.1:
-    dependencies:
-      loose-envify: 1.4.0
+  react@18.3.0-canary-a870b2d54-20240314: {}
 
   readable-stream@1.0.34:
     dependencies:
@@ -8456,34 +8453,34 @@ snapshots:
       mdast-util-to-hast: 12.3.0
       unified: 10.1.2
 
-  remix-auth-auth0@1.10.0(@remix-run/server-runtime@2.13.1(typescript@5.6.3))(remix-auth@3.7.0(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3))):
+  remix-auth-auth0@1.10.0(@remix-run/server-runtime@2.13.1(typescript@5.6.3))(remix-auth@3.7.0(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3))):
     dependencies:
       '@remix-run/server-runtime': 2.13.1(typescript@5.6.3)
-      remix-auth: 3.7.0(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3))
-      remix-auth-oauth2: 1.10.0(@remix-run/server-runtime@2.13.1(typescript@5.6.3))(remix-auth@3.7.0(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3)))
+      remix-auth: 3.7.0(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3))
+      remix-auth-oauth2: 1.10.0(@remix-run/server-runtime@2.13.1(typescript@5.6.3))(remix-auth@3.7.0(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3)))
     transitivePeerDependencies:
       - supports-color
 
-  remix-auth-oauth2@1.10.0(@remix-run/server-runtime@2.13.1(typescript@5.6.3))(remix-auth@3.7.0(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3))):
+  remix-auth-oauth2@1.10.0(@remix-run/server-runtime@2.13.1(typescript@5.6.3))(remix-auth@3.7.0(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3))):
     dependencies:
       '@remix-run/server-runtime': 2.13.1(typescript@5.6.3)
       debug: 4.3.7
-      remix-auth: 3.7.0(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3))
+      remix-auth: 3.7.0(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3))
     transitivePeerDependencies:
       - supports-color
 
-  remix-auth@3.7.0(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3)):
+  remix-auth@3.7.0(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(@remix-run/server-runtime@2.13.1(typescript@5.6.3)):
     dependencies:
-      '@remix-run/react': 2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+      '@remix-run/react': 2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3)
       '@remix-run/server-runtime': 2.13.1(typescript@5.6.3)
       uuid: 8.3.2
 
-  remix-i18next@6.4.1(@remix-run/node@2.13.1(typescript@5.6.3))(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(i18next@23.16.0)(react-i18next@15.0.3(i18next@23.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
+  remix-i18next@6.4.1(@remix-run/node@2.13.1(typescript@5.6.3))(@remix-run/react@2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3))(i18next@23.16.0)(react-i18next@15.0.3(i18next@23.16.0)(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
-      '@remix-run/react': 2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+      '@remix-run/react': 2.13.1(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)(typescript@5.6.3)
       i18next: 23.16.0
-      react: 18.3.1
-      react-i18next: 15.0.3(i18next@23.16.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.0-canary-a870b2d54-20240314
+      react-i18next: 15.0.3(i18next@23.16.0)(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
     optionalDependencies:
       '@remix-run/node': 2.13.1(typescript@5.6.3)
 
@@ -8491,9 +8488,9 @@ snapshots:
 
   require-like@0.1.2: {}
 
-  resend@4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  resend@4.0.0(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
-      '@react-email/render': 0.0.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-email/render': 0.0.17(react-dom@18.3.0-canary-a870b2d54-20240314(react@18.3.0-canary-a870b2d54-20240314))(react@18.3.0-canary-a870b2d54-20240314)
     transitivePeerDependencies:
       - react
       - react-dom
@@ -8576,9 +8573,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  scheduler@0.23.2:
-    dependencies:
-      loose-envify: 1.4.0
+  scheduler@0.24.0-canary-a870b2d54-20240314: {}
 
   selderee@0.11.0:
     dependencies:
@@ -9027,17 +9022,17 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  use-callback-ref@1.3.2(@types/react@18.3.11)(react@18.3.1):
+  use-callback-ref@1.3.2(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
       tslib: 2.8.0
     optionalDependencies:
       '@types/react': 18.3.11
 
-  use-sidecar@1.1.2(@types/react@18.3.11)(react@18.3.1):
+  use-sidecar@1.1.2(@types/react@18.3.11)(react@18.3.0-canary-a870b2d54-20240314):
     dependencies:
       detect-node-es: 1.1.0
-      react: 18.3.1
+      react: 18.3.0-canary-a870b2d54-20240314
       tslib: 2.8.0
     optionalDependencies:
       '@types/react': 18.3.11
