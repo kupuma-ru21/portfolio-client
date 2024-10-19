@@ -1,7 +1,6 @@
 import {
   chakra,
   Box,
-  Button,
   Flex,
   FormControl,
   FormLabel,
@@ -13,6 +12,7 @@ import {
 import { Form } from "@remix-run/react";
 import { useIndex } from "./useIndex";
 import { Input } from "~/components/input";
+import { SubmitButton } from "~/components/submitButton";
 import { Textarea } from "~/components/textarea";
 
 export const Admin = () => {
@@ -56,9 +56,7 @@ export const Admin = () => {
               </RadioGroup>
             </FormControl>
           </Flex>
-          <Button type="submit" size="lg" colorScheme="teal">
-            {t("Submit")}
-          </Button>
+          <SubmitButton>{t("Submit")}</SubmitButton>
         </chakra.fieldset>
       </Form>
     </Box>
