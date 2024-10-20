@@ -4,8 +4,7 @@ import { AppCard } from "../app-card";
 import { useIndex } from "./useIndex";
 
 export const Index = ({ apps }: { apps: AppsQuery["apps"] }) => {
-  const { t, appData } = useIndex();
-  console.log("apps", apps);
+  const { t } = useIndex();
 
   return (
     <Box py="20px">
@@ -41,14 +40,18 @@ export const Index = ({ apps }: { apps: AppsQuery["apps"] }) => {
           {t("Applications I developed at work")}
         </Heading>
         <Flex direction="column" gap="16px">
-          {appData.map(({ src, title, description, href, linkText }) => {
+          {apps.map(({ imageUrl, title, description, link, linkType }) => {
             return (
               <AppCard
-                src={src}
+                src={imageUrl}
                 title={title}
                 description={description}
-                href={href}
-                linkText={linkText}
+                href={link}
+                linkText={
+                  linkType === "app"
+                    ? "Move to the app"
+                    : "Move to company site"
+                }
                 key={title}
               />
             );

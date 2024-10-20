@@ -14,7 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 const documents = {
-    "query Apps {\n  apps {\n    id\n    title\n    description\n    link\n    linkType\n  }\n}": types.AppsDocument,
+    "query Apps {\n  apps {\n    id\n    title\n    description\n    link\n    linkType\n    imageUrl\n  }\n}": types.AppsDocument,
 };
 
 /**
@@ -34,7 +34,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "query Apps {\n  apps {\n    id\n    title\n    description\n    link\n    linkType\n  }\n}"): (typeof documents)["query Apps {\n  apps {\n    id\n    title\n    description\n    link\n    linkType\n  }\n}"];
+export function graphql(source: "query Apps {\n  apps {\n    id\n    title\n    description\n    link\n    linkType\n    imageUrl\n  }\n}"): (typeof documents)["query Apps {\n  apps {\n    id\n    title\n    description\n    link\n    linkType\n    imageUrl\n  }\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
