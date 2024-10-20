@@ -19,5 +19,5 @@
     "Naruto",
     "codegen"
   ],
-  "ignorePaths": ["node_modules", "pnpm-lock.yaml", "build"]
+  "ignorePaths": ["node_modules", "pnpm-lock.yaml", "build", "gql"]
 }
