@@ -1,9 +1,11 @@
 import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { type AppsQuery } from "gql/graphql";
 import { AppCard } from "../app-card";
 import { useIndex } from "./useIndex";
 
-export const Index = () => {
+export const Index = ({ apps }: { apps: AppsQuery["apps"] }) => {
   const { t, appData } = useIndex();
+  console.log("apps", apps);
 
   return (
     <Box py="20px">
