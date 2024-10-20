@@ -3,7 +3,7 @@ query Apps {
     id
     title
     description
-    URL
-    urlType
+    link
+    linkType
   }
 }

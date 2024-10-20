@@ -18,15 +18,15 @@ export type Scalars = {
 
 export type NewApp = {
   description: Scalars['String']['input'];
+  link: Scalars['String']['input'];
+  linkType: Scalars['String']['input'];
   title: Scalars['String']['input'];
-  url: Scalars['String']['input'];
-  urlType: Scalars['String']['input'];
 };
 
 export type AppsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AppsQuery = { __typename?: 'Query', apps: Array<{ __typename?: 'App', id: string, title: string, description: string, URL: string, urlType: string }> };
+export type AppsQuery = { __typename?: 'Query', apps: Array<{ __typename?: 'App', id: string, title: string, description: string, link: string, linkType: string }> };
 
 
-export const AppsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Apps"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"apps"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"URL"}},{"kind":"Field","name":{"kind":"Name","value":"urlType"}}]}}]}}]} as unknown as DocumentNode<AppsQuery, AppsQueryVariables>;
+export const AppsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Apps"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"apps"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"link"}},{"kind":"Field","name":{"kind":"Name","value":"linkType"}}]}}]}}]} as unknown as DocumentNode<AppsQuery, AppsQueryVariables>;
