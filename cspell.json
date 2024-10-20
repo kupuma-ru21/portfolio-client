@@ -16,7 +16,8 @@
     "vite",
     "Haikyu",
     "Kaisen",
-    "Naruto"
+    "Naruto",
+    "codegen"
   ],
   "ignorePaths": ["node_modules", "pnpm-lock.yaml", "build"]
 }

@@ -1,0 +1,9 @@
+query Apps {
+  apps {
+    id
+    title
+    description
+    URL
+    urlType
+  }
+}

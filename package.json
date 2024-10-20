@@ -12,7 +12,8 @@
     "spellcheck": "cspell '**'",
     "interface": "i18next-resources-for-ts interface -i ./public/locales/en -o ./@types/resources.d.ts",
     "test": "vitest",
-    "format": "eslint ./app --fix"
+    "format": "eslint ./app --fix",
+    "codegen": "graphql-codegen -r dotenv/config"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.10.3",
@@ -23,6 +24,7 @@
     "@remix-run/react": "^2.13.1",
     "@remix-run/serve": "^2.13.1",
     "framer-motion": "^11.11.9",
+    "graphql": "^16.9.0",
     "i18next": "^23.16.0",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-fs-backend": "^2.3.2",
@@ -45,6 +47,7 @@
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.0",
+    "@graphql-codegen/cli": "^5.0.3",
     "@remix-run/dev": "^2.13.1",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
