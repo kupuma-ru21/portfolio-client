@@ -52,10 +52,12 @@ export const Admin = () => {
             </FormControl>
             <FormControl>
               <FormLabel>{t("Type of the URL")}</FormLabel>
-              <RadioGroup>
+              <RadioGroup name="linkType">
                 <Stack direction="row" gap="16px">
-                  <Radio isRequired>{t("App")}</Radio>
-                  <Radio>{t("Company")}</Radio>
+                  <Radio isRequired value="App">
+                    {t("App")}
+                  </Radio>
+                  <Radio value="Company">{t("Company")}</Radio>
                 </Stack>
               </RadioGroup>
             </FormControl>

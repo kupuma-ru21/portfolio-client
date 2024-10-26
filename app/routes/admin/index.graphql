@@ -1,0 +1,19 @@
+mutation CreateApp(
+  $title: String!
+  $description: String!
+  $link: String!
+  $linkType: String!
+  $imageUrl: String!
+) {
+  createApp(
+    input: {
+      title: $title
+      description: $description
+      link: $link
+      linkType: $linkType
+      imageUrl: $imageUrl
+    }
+  ) {
+    id
+  }
+}
