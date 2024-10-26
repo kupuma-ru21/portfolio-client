@@ -3,7 +3,7 @@
   "Title": "タイトル",
   "Description": "説明",
   "imageUrl": "画像URL",
-  "URL": "URL",
+  "link": "リンク",
   "Type of the URL": "URLの種別",
   "App": "アプリ",
   "Company": "会社",

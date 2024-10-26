@@ -23,7 +23,7 @@ interface Resources {
     "Title": "Title",
     "Description": "Description",
     "imageUrl": "imageUrl",
-    "URL": "URL",
+    "link": "link",
     "Type of the URL": "Type of the URL",
     "App": "App",
     "Company": "Company",

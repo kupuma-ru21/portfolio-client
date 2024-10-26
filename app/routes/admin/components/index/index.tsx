@@ -47,8 +47,8 @@ export const Admin = () => {
               <Input name="imageUrl" />
             </FormControl>
             <FormControl>
-              <FormLabel>{t("URL")}</FormLabel>
-              <Input name="URL" />
+              <FormLabel>{t("link")}</FormLabel>
+              <Input name="link" />
             </FormControl>
             <FormControl>
               <FormLabel>{t("Type of the URL")}</FormLabel>
