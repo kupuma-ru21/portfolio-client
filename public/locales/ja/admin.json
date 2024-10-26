@@ -2,6 +2,7 @@
   "Add Application": "アプリの追加",
   "Title": "タイトル",
   "Description": "説明",
+  "imageUrl": "画像URL",
   "URL": "URL",
   "Type of the URL": "URLの種別",
   "App": "アプリ",

@@ -22,6 +22,7 @@ interface Resources {
     "Add Application": "Add Application",
     "Title": "Title",
     "Description": "Description",
+    "imageUrl": "imageUrl",
     "URL": "URL",
     "Type of the URL": "Type of the URL",
     "App": "App",

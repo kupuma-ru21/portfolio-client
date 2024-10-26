@@ -43,6 +43,10 @@ export const Admin = () => {
               <Textarea name="description" />
             </FormControl>
             <FormControl>
+              <FormLabel>{t("imageUrl")}</FormLabel>
+              <Input name="imageUrl" />
+            </FormControl>
+            <FormControl>
               <FormLabel>{t("URL")}</FormLabel>
               <Input name="URL" />
             </FormControl>
