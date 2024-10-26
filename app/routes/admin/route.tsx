@@ -13,12 +13,12 @@ export default function Route() {
   return <Admin />;
 }
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export const loader = async ({ request }: LoaderFunctionArgs) => {
   const session = await getSession(request.headers.get("cookie"));
   if (session.has("user")) return null;
   // TODO: wanna add type to path
   return redirect("/login");
-}
+};
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
