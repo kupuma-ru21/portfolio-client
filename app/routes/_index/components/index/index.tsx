@@ -48,7 +48,7 @@ export const Index = ({ apps }: { apps: AppsQuery["apps"] }) => {
                 description={description}
                 href={link}
                 linkText={
-                  linkType === "app"
+                  linkType === "App"
                     ? "Move to the app"
                     : "Move to company site"
                 }
