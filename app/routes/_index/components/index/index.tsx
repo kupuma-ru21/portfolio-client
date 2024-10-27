@@ -1,12 +1,23 @@
-import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  Divider,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 // import { type AppsQuery } from "gql/graphql";
-import { AppCard } from "../app-card";
 import { useIndex } from "./useIndex";
 
 export const Index = () =>
   // { apps }: { apps: AppsQuery["apps"] }
   {
-    const { t, appData } = useIndex();
+    const { t, appData, noOfLines, showFullDetail } = useIndex();
 
     return (
       <Box py="20px">
@@ -44,14 +55,41 @@ export const Index = () =>
           <Flex direction="column" gap="16px">
             {appData.map(({ src, title, description, href, linkText }) => {
               return (
-                <AppCard
-                  src={src}
-                  title={title}
-                  detail={description}
-                  href={href}
-                  linkText={linkText}
+                <Card
+                  direction={{ base: "column", md: "row" }}
+                  overflow="hidden"
+                  variant="outline"
                   key={title}
-                />
+                >
+                  <Image
+                    src={src}
+                    alt={title}
+                    objectFit="cover"
+                    maxW={{ base: "100%", md: "200px" }}
+                    maxH="200px"
+                  />
+                  <Stack>
+                    <CardBody>
+                      <Heading size="md">{title}</Heading>
+                      <Text noOfLines={noOfLines}>{description}</Text>
+                    </CardBody>
+                    <CardFooter gap="8px">
+                      <Button onClick={showFullDetail} w="110px">
+                        {noOfLines === undefined ? t("Fold") : t("Read more")}
+                      </Button>
+                      <Button
+                        as="a"
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer"
+                        variant="solid"
+                        colorScheme="teal"
+                      >
+                        {linkText}
+                      </Button>
+                    </CardFooter>
+                  </Stack>
+                </Card>
               );
             })}
           </Flex>
