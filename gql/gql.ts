@@ -14,8 +14,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 const documents = {
-    "query Apps {\n  apps {\n    id\n    title\n    description\n    link\n    linkType\n    imageUrl\n  }\n}": types.AppsDocument,
-    "mutation CreateApp($title: String!, $description: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, description: $description, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}": types.CreateAppDocument,
+    "query Apps {\n  apps {\n    id\n    title\n    detail\n    link\n    linkType\n    imageUrl\n  }\n}": types.AppsDocument,
+    "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}": types.CreateAppDocument,
 };
 
 /**
@@ -35,11 +35,11 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "query Apps {\n  apps {\n    id\n    title\n    description\n    link\n    linkType\n    imageUrl\n  }\n}"): (typeof documents)["query Apps {\n  apps {\n    id\n    title\n    description\n    link\n    linkType\n    imageUrl\n  }\n}"];
+export function graphql(source: "query Apps {\n  apps {\n    id\n    title\n    detail\n    link\n    linkType\n    imageUrl\n  }\n}"): (typeof documents)["query Apps {\n  apps {\n    id\n    title\n    detail\n    link\n    linkType\n    imageUrl\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "mutation CreateApp($title: String!, $description: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, description: $description, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}"): (typeof documents)["mutation CreateApp($title: String!, $description: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, description: $description, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}"];
+export function graphql(source: "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}"): (typeof documents)["mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

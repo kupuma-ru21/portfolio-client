@@ -6,9 +6,9 @@ export const useAppCard = () => {
   const { t } = useTranslation("index");
 
   const [noOfLines, setOoOfLines] = useState<number | undefined>(NO_OFL_INES);
-  const showFullDescription = () => {
+  const showFullDetail = () => {
     setOoOfLines((prev) => (prev === undefined ? NO_OFL_INES : undefined));
   };
 
-  return { t, noOfLines, showFullDescription };
+  return { t, noOfLines, showFullDetail };
 };

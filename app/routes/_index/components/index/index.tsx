@@ -40,12 +40,12 @@ export const Index = ({ apps }: { apps: AppsQuery["apps"] }) => {
           {t("Applications I developed at work")}
         </Heading>
         <Flex direction="column" gap="16px">
-          {apps.map(({ id, imageUrl, title, description, link, linkType }) => {
+          {apps.map(({ id, imageUrl, title, detail, link, linkType }) => {
             return (
               <AppCard
                 src={imageUrl}
                 title={title}
-                description={description}
+                detail={detail}
                 href={link}
                 linkText={
                   linkType === "App"

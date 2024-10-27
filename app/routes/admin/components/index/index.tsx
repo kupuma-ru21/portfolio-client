@@ -39,8 +39,8 @@ export const Admin = () => {
               <Input name="title" />
             </FormControl>
             <FormControl>
-              <FormLabel>{t("Description")}</FormLabel>
-              <Textarea name="description" />
+              <FormLabel>{t("Detail")}</FormLabel>
+              <Textarea name="detail" />
             </FormControl>
             <FormControl>
               <FormLabel>{t("imageUrl")}</FormLabel>

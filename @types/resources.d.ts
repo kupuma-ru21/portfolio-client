@@ -21,7 +21,7 @@ interface Resources {
   "admin": {
     "Add Application": "Add Application",
     "Title": "Title",
-    "Description": "Description",
+    "Detail": "Detail",
     "imageUrl": "imageUrl",
     "link": "link",
     "Type of the URL": "Type of the URL",

@@ -27,7 +27,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     mutation: CreateAppDocument,
     variables: {
       title: String(formData.get("title")),
-      description: String(formData.get("description")),
+      detail: String(formData.get("detail")),
       imageUrl: String(formData.get("imageUrl")),
       link: String(formData.get("link")),
       linkType: String(formData.get("linkType")),

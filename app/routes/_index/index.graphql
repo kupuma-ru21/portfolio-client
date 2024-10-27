@@ -2,7 +2,7 @@ query Apps {
   apps {
     id
     title
-    description
+    detail
     link
     linkType
     imageUrl

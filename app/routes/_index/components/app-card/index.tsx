@@ -14,17 +14,17 @@ import { useAppCard } from "./useAppCard";
 export const AppCard = ({
   src,
   title,
-  description,
+  detail,
   href,
   linkText,
 }: {
   src: string;
   title: string;
-  description: ReactNode;
+  detail: ReactNode;
   href: string;
   linkText: string;
 }) => {
-  const { t, noOfLines, showFullDescription } = useAppCard();
+  const { t, noOfLines, showFullDetail } = useAppCard();
 
   return (
     <Card
@@ -42,10 +42,10 @@ export const AppCard = ({
       <Stack>
         <CardBody>
           <Heading size="md">{title}</Heading>
-          <Text noOfLines={noOfLines}>{description}</Text>
+          <Text noOfLines={noOfLines}>{detail}</Text>
         </CardBody>
         <CardFooter gap="8px">
-          <Button onClick={showFullDescription} w="110px">
+          <Button onClick={showFullDetail} w="110px">
             {noOfLines === undefined ? t("Fold") : t("Read more")}
           </Button>
           <Button
