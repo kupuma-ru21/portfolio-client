@@ -1,10 +1,7 @@
 query Apps {
   apps {
-    id
-    title
-    detail
+    ...App
     link
     linkType
-    imageUrl
   }
 }

@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 import { useAppCard } from "./useAppCard";
 
-// TODO: move this to a shared component
 // TODO: change structure of element to use this between admin and index
 export const AppCard = ({
   src,

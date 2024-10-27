@@ -1,0 +1,5 @@
+query AdminApps {
+  apps {
+    ...App
+  }
+}

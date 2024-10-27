@@ -10,11 +10,11 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { type AppsQuery } from "gql/graphql";
+import { type AppFragment } from "gql/graphql";
 import { useIndex } from "./useIndex";
 import { Link } from "~/components/link";
 
-export const Admin = ({ apps }: { apps: AppsQuery["apps"] }) => {
+export const Admin = ({ apps }: { apps: AppFragment[] }) => {
   const { t } = useIndex();
 
   return (
@@ -23,7 +23,6 @@ export const Admin = ({ apps }: { apps: AppsQuery["apps"] }) => {
         <Heading mb="16px" textAlign="center" fontWeight={600}>
           {t("Applications")}
         </Heading>
-        {/* TODO: add Apps Fragment and AdminApps Query */}
         <Flex direction="column" gap="16px">
           {apps.map(({ id, title, detail, imageUrl }) => {
             return (
