@@ -12,7 +12,7 @@ import {
 import { Form } from "@remix-run/react";
 import { useIndex } from "./useIndex";
 import { Input } from "~/components/input";
-import { SubmitButton } from "~/components/submitButton";
+import { SubmitButton } from "~/components/submit-button";
 import { Textarea } from "~/components/textarea";
 
 export const AddApp = () => {

@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
 import { useIndex } from "./useIndex";
-import { SubmitButton } from "~/components/submitButton";
+import { SubmitButton } from "~/components/submit-button";
 
 export const Login = () => {
   const { t } = useIndex();
