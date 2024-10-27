@@ -19,15 +19,10 @@ interface Resources {
     }
   },
   "admin": {
-    "Add Application": "Add Application",
-    "Title": "Title",
-    "Detail": "Detail",
-    "imageUrl": "imageUrl",
-    "link": "link",
-    "Type of the URL": "Type of the URL",
-    "App": "App",
-    "Company": "Company",
-    "Submit": "Submit"
+    "Admin": "Admin",
+    "Applications": "Applications",
+    "Move to the site": "Move to the site",
+    "Move to company site": "Move to company site"
   },
   "admin_add-app": {
     "Add Application": "Add Application",

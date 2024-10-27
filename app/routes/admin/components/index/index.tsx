@@ -1,70 +1,36 @@
-import {
-  chakra,
-  Box,
-  Flex,
-  FormControl,
-  FormLabel,
-  Heading,
-  RadioGroup,
-  Radio,
-  Stack,
-} from "@chakra-ui/react";
-import { Form } from "@remix-run/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
+import { type AppsQuery } from "gql/graphql";
 import { useIndex } from "./useIndex";
-import { Input } from "~/components/input";
-import { SubmitButton } from "~/components/submitButton";
-import { Textarea } from "~/components/textarea";
+import { AppCard } from "~/routes/_index/components/app-card";
 
-export const Admin = () => {
+export const Admin = ({ apps }: { apps: AppsQuery["apps"] }) => {
   const { t } = useIndex();
-  const isSubmitting = false;
 
   return (
     <Box py="20px">
-      <Heading as="h1" textAlign="center" mb="32px">
-        {t("Add Application")}
-      </Heading>
-      <Form method="POST" style={{ textAlign: "center" }}>
-        <chakra.fieldset disabled={isSubmitting}>
-          <Flex
-            direction="column"
-            justifyContent="center"
-            w="fit-content"
-            m="auto"
-            gap="24px"
-            mb="54px"
-          >
-            <FormControl>
-              <FormLabel>{t("Title")}</FormLabel>
-              <Input name="title" />
-            </FormControl>
-            <FormControl>
-              <FormLabel>{t("Detail")}</FormLabel>
-              <Textarea name="detail" />
-            </FormControl>
-            <FormControl>
-              <FormLabel>{t("imageUrl")}</FormLabel>
-              <Input name="imageUrl" />
-            </FormControl>
-            <FormControl>
-              <FormLabel>{t("link")}</FormLabel>
-              <Input name="link" />
-            </FormControl>
-            <FormControl>
-              <FormLabel>{t("Type of the URL")}</FormLabel>
-              <RadioGroup name="linkType">
-                <Stack direction="row" gap="16px">
-                  <Radio isRequired value="App">
-                    {t("App")}
-                  </Radio>
-                  <Radio value="Company">{t("Company")}</Radio>
-                </Stack>
-              </RadioGroup>
-            </FormControl>
-          </Flex>
-          <SubmitButton>{t("Submit")}</SubmitButton>
-        </chakra.fieldset>
-      </Form>
+      <Box p="16px">
+        <Heading mb="16px" textAlign="center" fontWeight={600}>
+          {t("Applications")}
+        </Heading>
+        <Flex direction="column" gap="16px">
+          {apps.map(({ id, title, detail, link, linkType, imageUrl }) => {
+            return (
+              <AppCard
+                src={imageUrl}
+                title={title}
+                detail={detail}
+                href={link}
+                linkText={
+                  linkType === "App"
+                    ? t("Move to the site")
+                    : t("Move to company site")
+                }
+                key={id}
+              />
+            );
+          })}
+        </Flex>
+      </Box>
     </Box>
   );
 };

@@ -2,22 +2,39 @@ import {
   type ActionFunctionArgs,
   redirect,
   type LoaderFunctionArgs,
+  json,
+  type MetaFunction,
 } from "@remix-run/node";
-import { CreateAppDocument } from "gql/graphql";
+import { useLoaderData } from "@remix-run/react";
+import { AppsDocument, CreateAppDocument } from "gql/graphql";
 import { Admin } from "./components/index";
+import i18next from "~/i18n/i18next.server";
 import { getSession } from "~/services/session.server";
+import { createMetaTitle } from "~/utils/createMetaTitle";
 import { get500ErrorResponse } from "~/utils/error/get500ErrorResponse";
 import { apolloClient } from "~/utils/graphql";
 
 export default function Route() {
-  return <Admin />;
+  const data = useLoaderData<typeof loader>();
+  return <Admin apps={data.apps} />;
 }
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const session = await getSession(request.headers.get("cookie"));
-  if (session.has("user")) return null;
   // TODO: wanna add type to path
-  return redirect("/login");
+  if (!session.has("user")) return redirect("/login");
+
+  // TODO: create fetchApps in utils
+  const {
+    data: { apps },
+    error,
+  } = await apolloClient.query({ query: AppsDocument });
+  if (error) throw get500ErrorResponse(error);
+
+  const t = await i18next.getFixedT(request, "admin");
+  const title = t("Admin");
+
+  return json({ apps, title });
 };
 
 export const action = async ({ request }: ActionFunctionArgs) => {
@@ -37,7 +54,8 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   return redirect("/");
 };
 
-// TODO: add i18n
-export const handle = { isAdmin: true };
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  return [{ title: createMetaTitle(data?.title ?? "") }];
+};
 
-// TODO: add meta
+export const handle = { isAdmin: true, i18n: "admin" };

@@ -1,11 +1,6 @@
 {
-  "Add Application": "アプリの追加",
-  "Title": "タイトル",
-  "Detail": "詳細",
-  "imageUrl": "画像URL",
-  "link": "リンク",
-  "Type of the URL": "URLの種別",
-  "App": "アプリ",
-  "Company": "会社",
-  "Submit": "送信"
+  "Admin": "管理画面",
+  "Applications": "アプリケーション",
+  "Move to the site": "サイトへ移動",
+  "Move to company site": "会社のサイトへ移動"
 }
