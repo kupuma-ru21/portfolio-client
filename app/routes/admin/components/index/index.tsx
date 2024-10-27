@@ -1,17 +1,7 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  Flex,
-  Heading,
-  Image,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Heading } from "@chakra-ui/react";
 import { type AppFragment } from "gql/graphql";
 import { useIndex } from "./useIndex";
+import { Card } from "~/components/card";
 import { Link } from "~/components/link";
 
 export const Admin = ({ apps }: { apps: AppFragment[] }) => {
@@ -26,25 +16,14 @@ export const Admin = ({ apps }: { apps: AppFragment[] }) => {
         <Flex direction="column" gap="16px">
           {apps.map(({ id, title, detail, imageUrl }) => {
             return (
-              <Card
-                direction={{ base: "column", md: "row" }}
-                overflow="hidden"
-                variant="outline"
-                key={id}
-              >
-                <Image
-                  src={imageUrl}
-                  alt={title}
-                  objectFit="cover"
-                  maxW={{ base: "100%", md: "200px" }}
-                  maxH="200px"
-                />
-                <Stack>
-                  <CardBody>
-                    <Heading size="md">{title}</Heading>
-                    <Text>{detail}</Text>
-                  </CardBody>
-                  <CardFooter gap="8px">
+              <Card key={id}>
+                <Card.Image src={imageUrl} alt={title} />
+                <Card.Stack>
+                  <Card.Body>
+                    <Card.Heading>{title}</Card.Heading>
+                    <Card.Text>{detail}</Card.Text>
+                  </Card.Body>
+                  <Card.Footer>
                     <Button
                       as={Link}
                       to={`/admin/app/${id}/edit`}
@@ -55,8 +34,8 @@ export const Admin = ({ apps }: { apps: AppFragment[] }) => {
                     >
                       Edit
                     </Button>
-                  </CardFooter>
-                </Stack>
+                  </Card.Footer>
+                </Card.Stack>
               </Card>
             );
           })}

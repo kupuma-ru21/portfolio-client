@@ -1,18 +1,15 @@
 import {
   Box,
   Button,
-  Card,
-  CardBody,
-  CardFooter,
   Divider,
   Flex,
   Heading,
   Image,
-  Stack,
   Text,
 } from "@chakra-ui/react";
 // import { type AppsQuery } from "gql/graphql";
 import { useIndex } from "./useIndex";
+import { Card } from "~/components/card";
 
 export const Index = () =>
   // { apps }: { apps: AppsQuery["apps"] }
@@ -55,25 +52,14 @@ export const Index = () =>
           <Flex direction="column" gap="16px">
             {appData.map(({ src, title, description, href, linkText }) => {
               return (
-                <Card
-                  direction={{ base: "column", md: "row" }}
-                  overflow="hidden"
-                  variant="outline"
-                  key={title}
-                >
-                  <Image
-                    src={src}
-                    alt={title}
-                    objectFit="cover"
-                    maxW={{ base: "100%", md: "200px" }}
-                    maxH="200px"
-                  />
-                  <Stack>
-                    <CardBody>
-                      <Heading size="md">{title}</Heading>
-                      <Text noOfLines={noOfLines}>{description}</Text>
-                    </CardBody>
-                    <CardFooter gap="8px">
+                <Card key={title}>
+                  <Card.Image src={src} alt={title} />
+                  <Card.Stack>
+                    <Card.Body>
+                      <Card.Heading>{title}</Card.Heading>
+                      <Card.Text noOfLines={noOfLines}>{description}</Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
                       <Button onClick={showFullDetail} w="110px">
                         {noOfLines === undefined ? t("Fold") : t("Read more")}
                       </Button>
@@ -87,8 +73,8 @@ export const Index = () =>
                       >
                         {linkText}
                       </Button>
-                    </CardFooter>
-                  </Stack>
+                    </Card.Footer>
+                  </Card.Stack>
                 </Card>
               );
             })}
