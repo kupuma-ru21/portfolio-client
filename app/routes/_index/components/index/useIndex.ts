@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { useRouteLoaderData } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
 import { getPathByLocale } from "./utils";
-import { LOCALES, NO_OF_LINES } from "~/constants";
+import { LOCALES } from "~/constants";
 import { type loader } from "~/root";
 
 export const useIndex = () => {
@@ -10,11 +9,6 @@ export const useIndex = () => {
 
   const routeLoaderData = useRouteLoaderData<typeof loader>("root");
   const locale = routeLoaderData?.locale ?? LOCALES.en;
-
-  const [noOfLines, setOoOfLines] = useState<number | undefined>(NO_OF_LINES);
-  const showFullDetail = () => {
-    setOoOfLines((prev) => (prev === undefined ? NO_OF_LINES : undefined));
-  };
 
   const appData = [
     {
@@ -54,5 +48,5 @@ export const useIndex = () => {
     },
   ];
 
-  return { t, appData, noOfLines, showFullDetail };
+  return { t, appData };
 };

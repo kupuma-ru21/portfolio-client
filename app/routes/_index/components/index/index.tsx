@@ -1,20 +1,13 @@
-import {
-  Box,
-  Button,
-  Divider,
-  Flex,
-  Heading,
-  Image,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
 // import { type AppsQuery } from "gql/graphql";
+import { CardContent } from "../card-body";
 import { useIndex } from "./useIndex";
 import { Card } from "~/components/card";
 
 export const Index = () =>
   // { apps }: { apps: AppsQuery["apps"] }
   {
-    const { t, appData, noOfLines, showFullDetail } = useIndex();
+    const { t, appData } = useIndex();
 
     return (
       <Box py="20px">
@@ -54,27 +47,12 @@ export const Index = () =>
               return (
                 <Card key={title}>
                   <Card.Image src={src} alt={title} />
-                  <Card.Stack>
-                    <Card.Body>
-                      <Card.Heading>{title}</Card.Heading>
-                      <Card.Text noOfLines={noOfLines}>{description}</Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                      <Button onClick={showFullDetail} w="110px">
-                        {noOfLines === undefined ? t("Fold") : t("Read more")}
-                      </Button>
-                      <Button
-                        as="a"
-                        href={href}
-                        target="_blank"
-                        rel="noreferrer"
-                        variant="solid"
-                        colorScheme="teal"
-                      >
-                        {linkText}
-                      </Button>
-                    </Card.Footer>
-                  </Card.Stack>
+                  <CardContent
+                    title={title}
+                    detail={description}
+                    href={href}
+                    linkText={linkText}
+                  />
                 </Card>
               );
             })}
