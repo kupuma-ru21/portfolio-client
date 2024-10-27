@@ -26,9 +26,7 @@ export const Admin = ({ apps }: { apps: AppFragment[] }) => {
                   <Card.Footer>
                     <Button
                       as={Link}
-                      to={`/admin/app/${id}/edit`}
-                      target="_blank"
-                      rel="noreferrer"
+                      to={`/admin/apps/${id}/edit`}
                       variant="solid"
                       colorScheme="teal"
                     >

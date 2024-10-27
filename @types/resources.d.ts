@@ -35,6 +35,9 @@ interface Resources {
     "Company": "Company",
     "Submit": "Submit"
   },
+  "admin_apps_app-id_edit": {
+    "Edit Application": "Edit Application"
+  },
   "common": {
     "header": {
       "resume": {
