@@ -3,7 +3,7 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+// import { useLoaderData } from "@remix-run/react";
 import { AppsDocument } from "gql/graphql";
 import { Index } from "./components/index";
 import i18next from "~/i18n/i18next.server";
@@ -12,8 +12,12 @@ import { get500ErrorResponse } from "~/utils/error/get500ErrorResponse";
 import { apolloClient } from "~/utils/graphql";
 
 export default function Route() {
-  const data = useLoaderData<typeof loader>();
-  return <Index apps={data.apps} />;
+  // const data = useLoaderData<typeof loader>();
+  return (
+    <Index
+    // apps={data.apps}
+    />
+  );
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
