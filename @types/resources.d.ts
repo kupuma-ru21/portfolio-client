@@ -29,6 +29,17 @@ interface Resources {
     "Company": "Company",
     "Submit": "Submit"
   },
+  "admin_add-app": {
+    "Add Application": "Add Application",
+    "Title": "Title",
+    "Detail": "Detail",
+    "imageUrl": "imageUrl",
+    "link": "link",
+    "Type of the URL": "Type of the URL",
+    "App": "App",
+    "Company": "Company",
+    "Submit": "Submit"
+  },
   "common": {
     "header": {
       "resume": {

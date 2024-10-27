@@ -2,22 +2,29 @@ import {
   type ActionFunctionArgs,
   redirect,
   type LoaderFunctionArgs,
+  json,
+  type MetaFunction,
 } from "@remix-run/node";
 import { CreateAppDocument } from "gql/graphql";
-import { Admin } from "./components/index";
+import { AddApp } from "./components/index";
+import i18next from "~/i18n/i18next.server";
 import { getSession } from "~/services/session.server";
+import { createMetaTitle } from "~/utils/createMetaTitle";
 import { get500ErrorResponse } from "~/utils/error/get500ErrorResponse";
 import { apolloClient } from "~/utils/graphql";
 
 export default function Route() {
-  return <Admin />;
+  return <AddApp />;
 }
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
+  // TODO: refactor
   const session = await getSession(request.headers.get("cookie"));
-  if (session.has("user")) return null;
-  // TODO: wanna add type to path
-  return redirect("/login");
+  if (!session.has("user")) return redirect("/login");
+
+  const t = await i18next.getFixedT(request, "admin_add-app");
+  const title = t("Add Application");
+  return json({ title });
 };
 
 export const action = async ({ request }: ActionFunctionArgs) => {
@@ -37,7 +44,8 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   return redirect("/");
 };
 
-// TODO: add i18n
-export const handle = { isAdmin: true };
+export const handle = { isAdmin: true, i18n: "admin_add-app" };
 
-// TODO: add meta
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  return [{ title: createMetaTitle(data?.title ?? "") }];
+};
