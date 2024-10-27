@@ -48,7 +48,7 @@ export default function App() {
           </>
         )}
         <Box
-          pl={`${SIDE_BAR_WIDTH}px`}
+          pl={isAdmin ? undefined : `${SIDE_BAR_WIDTH}px`}
           {...(navigation.state === "loading"
             ? {
                 opacity: 0.25,
