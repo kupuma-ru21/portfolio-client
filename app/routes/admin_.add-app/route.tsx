@@ -8,19 +8,19 @@ import {
 import { CreateAppDocument } from "gql/graphql";
 import { AddApp } from "./components/index";
 import i18next from "~/i18n/i18next.server";
-import { getSession } from "~/services/session.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
 import { get500ErrorResponse } from "~/utils/error/get500ErrorResponse";
 import { apolloClient } from "~/utils/graphql";
+import { isLoggedIn } from "~/utils/isLoggedIn";
 
 export default function Route() {
   return <AddApp />;
 }
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  // TODO: refactor
-  const session = await getSession(request.headers.get("cookie"));
-  if (!session.has("user")) return redirect("/login");
+  if (!(await isLoggedIn(request.headers.get("cookie")))) {
+    return redirect("/login");
+  }
 
   const t = await i18next.getFixedT(request, "admin_add-app");
   const title = t("Add Application");

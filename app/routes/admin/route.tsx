@@ -14,10 +14,10 @@ import {
 } from "gql/graphql";
 import { Admin } from "./components/index";
 import i18next from "~/i18n/i18next.server";
-import { getSession } from "~/services/session.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
 import { get500ErrorResponse } from "~/utils/error/get500ErrorResponse";
 import { apolloClient } from "~/utils/graphql";
+import { isLoggedIn } from "~/utils/isLoggedIn";
 
 export default function Route() {
   const data = useLoaderData<typeof loader>();
@@ -25,9 +25,10 @@ export default function Route() {
 }
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const session = await getSession(request.headers.get("cookie"));
-  // TODO: wanna add type to path
-  if (!session.has("user")) return redirect("/login");
+  if (!(await isLoggedIn(request.headers.get("cookie")))) {
+    // TODO: wanna add type to path
+    return redirect("/login");
+  }
 
   // TODO: create fetchApps in utils
   const {
