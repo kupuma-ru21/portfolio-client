@@ -41,7 +41,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     },
   });
   if (errors) throw get500ErrorResponse(errors[0]);
-  return redirect("/");
+  return redirect("/admin");
 };
 
 export const handle = { isAdmin: true, i18n: "admin_add-app" };
