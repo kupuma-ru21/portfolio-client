@@ -17,12 +17,14 @@ export default function Route() {
   return <AddApp />;
 }
 
+const I18N = "admin_add-app";
+
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   if (!(await isLoggedIn(request.headers.get("cookie")))) {
     return redirect("/login");
   }
 
-  const t = await i18next.getFixedT(request, "admin_add-app");
+  const t = await i18next.getFixedT(request, I18N);
   const title = t("Add Application");
   return json({ title });
 };
@@ -44,7 +46,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   return redirect("/admin");
 };
 
-export const handle = { isAdmin: true, i18n: "admin_add-app" };
+export const handle = { isAdmin: true, i18n: I18N };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [{ title: createMetaTitle(data?.title ?? "") }];

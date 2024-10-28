@@ -20,6 +20,8 @@ export default function Route() {
   );
 }
 
+const I18N = "index";
+
 export async function loader({ request }: LoaderFunctionArgs) {
   const {
     data: { apps },
@@ -27,7 +29,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   } = await apolloClient.query({ query: AppsDocument });
   if (error) throw get500ErrorResponse(error);
 
-  const t = await i18next.getFixedT(request, "index");
+  const t = await i18next.getFixedT(request, I18N);
   const title = t("Home");
   return json({ title, apps });
 }
@@ -36,4 +38,4 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [{ title: createMetaTitle(data?.title ?? "") }];
 };
 
-export const handle = { i18n: "index" };
+export const handle = { i18n: I18N };

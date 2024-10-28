@@ -24,6 +24,8 @@ export default function Route() {
   return <Admin apps={getFragmentData(AppFragmentDoc, data.apps)} />;
 }
 
+const I18N = "admin";
+
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   if (!(await isLoggedIn(request.headers.get("cookie")))) {
     // TODO: wanna add type to path
@@ -37,7 +39,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   } = await apolloClient.query({ query: AdminAppsDocument });
   if (error) throw get500ErrorResponse(error);
 
-  const t = await i18next.getFixedT(request, "admin");
+  const t = await i18next.getFixedT(request, I18N);
   const title = t("Admin");
 
   return json({ apps, title });
@@ -64,4 +66,4 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [{ title: createMetaTitle(data?.title ?? "") }];
 };
 
-export const handle = { isAdmin: true, i18n: "admin" };
+export const handle = { isAdmin: true, i18n: I18N };

@@ -30,6 +30,8 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 }
 
+const I18N = "contact";
+
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request, "contact");
   const title = t("Contact");
@@ -40,4 +42,4 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [{ title: createMetaTitle(data?.title ?? "") }];
 };
 
-export const handle = { i18n: "contact" };
+export const handle = { i18n: I18N };

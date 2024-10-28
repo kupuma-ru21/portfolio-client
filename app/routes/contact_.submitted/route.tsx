@@ -11,8 +11,10 @@ export default function Route() {
   return <ContactSubmitted />;
 }
 
+const I18N = "contact";
+
 export async function loader({ request }: LoaderFunctionArgs) {
-  const t = await i18next.getFixedT(request, "contact");
+  const t = await i18next.getFixedT(request, I18N);
   const title = t("Contact");
   return json({ title });
 }
@@ -21,4 +23,4 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [{ title: createMetaTitle(data?.title ?? "") }];
 };
 
-export const handle = { i18n: "contact" };
+export const handle = { i18n: I18N };

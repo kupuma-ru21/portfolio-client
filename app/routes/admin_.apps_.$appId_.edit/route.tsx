@@ -12,17 +12,19 @@ export default function Route() {
   return <>edit app</>;
 }
 
+const I18N = "admin_apps_app-id_edit";
+
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   if (!(await isLoggedIn(request.headers.get("cookie")))) {
     return redirect("/login");
   }
 
-  const t = await i18next.getFixedT(request, "admin_apps_app-id_edit");
+  const t = await i18next.getFixedT(request, I18N);
   const title = t("Edit Application");
   return json({ title });
 };
 
-export const handle = { isAdmin: true, i18n: "admin_apps_app-id_edit" };
+export const handle = { isAdmin: true, i18n: I18N };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [{ title: createMetaTitle(data?.title ?? "") }];
