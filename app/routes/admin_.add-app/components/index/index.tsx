@@ -16,9 +16,7 @@ import { SubmitButton } from "~/components/submit-button";
 import { Textarea } from "~/components/textarea";
 
 export const AddApp = () => {
-  const { t } = useIndex();
-  // TODO: isSubmitting
-  const isSubmitting = false;
+  const { t, isSubmitting } = useIndex();
 
   return (
     <Box py="20px">
@@ -63,7 +61,7 @@ export const AddApp = () => {
               </RadioGroup>
             </FormControl>
           </Flex>
-          <SubmitButton>{t("Submit")}</SubmitButton>
+          <SubmitButton isLoading={isSubmitting}>{t("Submit")}</SubmitButton>
         </chakra.fieldset>
       </Form>
     </Box>
