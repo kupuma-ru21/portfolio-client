@@ -10,13 +10,13 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
+import { type AppQuery, type AppFragment } from "gql/graphql";
 import { useIndex } from "./useIndex";
 import { Input } from "~/components/input";
 import { SubmitButton } from "~/components/submit-button";
 import { Textarea } from "~/components/textarea";
 
-export const EditApp = () => {
-  // TODO: add default value from the app by id
+export const EditApp = ({ app }: { app: AppQuery["app"] & AppFragment }) => {
   // TODO: add mutation to update the app
   const { t, isSubmitting } = useIndex();
 
@@ -37,23 +37,23 @@ export const EditApp = () => {
           >
             <FormControl>
               <FormLabel>{t("Title")}</FormLabel>
-              <Input name="title" />
+              <Input defaultValue={app.title} name="title" />
             </FormControl>
             <FormControl>
               <FormLabel>{t("Detail")}</FormLabel>
-              <Textarea name="detail" />
+              <Textarea defaultValue={app.detail} name="detail" />
             </FormControl>
             <FormControl>
               <FormLabel>{t("imageUrl")}</FormLabel>
-              <Input name="imageUrl" />
+              <Input defaultValue={app.imageUrl} name="imageUrl" />
             </FormControl>
             <FormControl>
               <FormLabel>{t("link")}</FormLabel>
-              <Input name="link" />
+              <Input defaultValue={app.link} name="link" />
             </FormControl>
             <FormControl>
               <FormLabel>{t("Type of the URL")}</FormLabel>
-              <RadioGroup name="linkType">
+              <RadioGroup name="linkType" defaultValue={app.linkType}>
                 <Stack direction="row" gap="16px">
                   <Radio isRequired value="App">
                     {t("App")}

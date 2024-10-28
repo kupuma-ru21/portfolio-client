@@ -1,0 +1,7 @@
+query App($id: ID!) {
+  app(id: $id) {
+    ...App
+    link
+    linkType
+  }
+}

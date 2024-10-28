@@ -18,6 +18,7 @@ const documents = {
     "query Apps {\n  apps {\n    ...App\n    link\n    linkType\n  }\n}": types.AppsDocument,
     "query AdminApps {\n  apps {\n    ...App\n  }\n}": types.AdminAppsDocument,
     "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}": types.CreateAppDocument,
+    "query App($id: ID!) {\n  app(id: $id) {\n    ...App\n    link\n    linkType\n  }\n}": types.AppDocument,
 };
 
 /**
@@ -50,6 +51,10 @@ export function graphql(source: "query AdminApps {\n  apps {\n    ...App\n  }\n}
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}"): (typeof documents)["mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query App($id: ID!) {\n  app(id: $id) {\n    ...App\n    link\n    linkType\n  }\n}"): (typeof documents)["query App($id: ID!) {\n  app(id: $id) {\n    ...App\n    link\n    linkType\n  }\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
