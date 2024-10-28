@@ -10,9 +10,19 @@ export const Admin = ({ apps }: { apps: AppFragment[] }) => {
   return (
     <Box py="20px">
       <Box p="16px">
-        <Heading mb="16px" textAlign="center" fontWeight={600}>
-          {t("Applications")}
-        </Heading>
+        <Flex justifyContent="space-between">
+          <Heading mb="16px" textAlign="center" fontWeight={600}>
+            {t("Applications")}
+          </Heading>
+          <Button
+            as={Link}
+            to="/admin/add-app"
+            variant="solid"
+            colorScheme="teal"
+          >
+            Add
+          </Button>
+        </Flex>
         <Flex direction="column" gap="16px">
           {apps.map(({ id, title, detail, imageUrl }) => {
             return (
@@ -28,7 +38,7 @@ export const Admin = ({ apps }: { apps: AppFragment[] }) => {
                       as={Link}
                       to={`/admin/apps/${id}/edit`}
                       variant="solid"
-                      colorScheme="teal"
+                      colorScheme="green"
                     >
                       Edit
                     </Button>
