@@ -36,7 +36,15 @@ interface Resources {
     "Submit": "Submit"
   },
   "admin_apps_app-id_edit": {
-    "Edit Application": "Edit Application"
+    "Edit Application": "Edit Application",
+    "Title": "Title",
+    "Detail": "Detail",
+    "imageUrl": "imageUrl",
+    "link": "link",
+    "Type of the URL": "Type of the URL",
+    "App": "App",
+    "Company": "Company",
+    "Submit": "Submit"
   },
   "common": {
     "header": {

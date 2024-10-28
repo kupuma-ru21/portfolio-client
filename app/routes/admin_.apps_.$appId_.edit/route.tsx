@@ -4,12 +4,13 @@ import {
   json,
   type MetaFunction,
 } from "@remix-run/node";
+import { EditApp } from "./components/index";
 import i18next from "~/i18n/i18next.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
 import { isLoggedIn } from "~/utils/isLoggedIn";
 
 export default function Route() {
-  return <>edit app</>;
+  return <EditApp />;
 }
 
 const I18N = "admin_apps_app-id_edit";
