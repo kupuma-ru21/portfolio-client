@@ -22,7 +22,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   return json({ title });
 };
 
-export const handle = { isAdmin: true, i18n: "admin_add-app" };
+export const handle = { isAdmin: true, i18n: "admin_apps_app-id_edit" };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [{ title: createMetaTitle(data?.title ?? "") }];
