@@ -13,7 +13,5 @@ mutation CreateApp(
       linkType: $linkType
       imageUrl: $imageUrl
     }
-  ) {
-    id
-  }
+  )
 }

@@ -17,7 +17,7 @@ const documents = {
     "fragment App on App {\n  id\n  title\n  detail\n  imageUrl\n}": types.AppFragmentDoc,
     "query Apps {\n  apps {\n    ...App\n    link\n    linkType\n  }\n}": types.AppsDocument,
     "query AdminApps {\n  apps {\n    ...App\n  }\n}": types.AdminAppsDocument,
-    "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}": types.CreateAppDocument,
+    "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  )\n}": types.CreateAppDocument,
     "query App($id: ID!) {\n  app(id: $id) {\n    ...App\n    link\n    linkType\n  }\n}\n\nmutation UpdateApp($id: ID!, $title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  updateApp(\n    input: {id: $id, title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  )\n}": types.AppDocument,
 };
 
@@ -50,7 +50,7 @@ export function graphql(source: "query AdminApps {\n  apps {\n    ...App\n  }\n}
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}"): (typeof documents)["mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  ) {\n    id\n  }\n}"];
+export function graphql(source: "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  )\n}"): (typeof documents)["mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  )\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
