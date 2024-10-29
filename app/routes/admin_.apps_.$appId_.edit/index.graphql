@@ -5,3 +5,23 @@ query App($id: ID!) {
     linkType
   }
 }
+
+mutation UpdateApp(
+  $id: ID!
+  $title: String!
+  $detail: String!
+  $link: String!
+  $linkType: String!
+  $imageUrl: String!
+) {
+  updateApp(
+    input: {
+      id: $id
+      title: $title
+      detail: $detail
+      link: $link
+      linkType: $linkType
+      imageUrl: $imageUrl
+    }
+  )
+}

@@ -3,10 +3,11 @@ import {
   type LoaderFunctionArgs,
   json,
   type MetaFunction,
+  type ActionFunctionArgs,
 } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getFragmentData } from "gql/fragment-masking";
-import { AppDocument, AppFragmentDoc } from "gql/graphql";
+import { AppDocument, AppFragmentDoc, UpdateAppDocument } from "gql/graphql";
 import { EditApp } from "./components/index";
 import i18next from "~/i18n/i18next.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
@@ -39,6 +40,24 @@ export const loader = async ({ request, params }: LoaderFunctionArgs) => {
   const t = await i18next.getFixedT(request, I18N);
   const title = t("Edit Application");
   return json({ title, app });
+};
+
+export const action = async ({ request, params }: ActionFunctionArgs) => {
+  const formData = await request.formData();
+
+  const { errors } = await apolloClient.mutate({
+    mutation: UpdateAppDocument,
+    variables: {
+      id: params.appId || "",
+      title: String(formData.get("title")),
+      detail: String(formData.get("detail")),
+      imageUrl: String(formData.get("imageUrl")),
+      link: String(formData.get("link")),
+      linkType: String(formData.get("linkType")),
+    },
+  });
+  if (errors) throw get500ErrorResponse(errors[0]);
+  return redirect("/admin");
 };
 
 export const handle = { isAdmin: true, i18n: I18N };
