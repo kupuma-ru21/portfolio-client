@@ -3,3 +3,7 @@ query AdminApps {
     ...App
   }
 }
+
+mutation DeleteApp($id: ID!) {
+  deleteApp(id: $id)
+}

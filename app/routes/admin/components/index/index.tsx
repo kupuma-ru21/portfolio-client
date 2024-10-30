@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Heading } from "@chakra-ui/react";
 import { type AppFragment } from "gql/graphql";
+import { DeleteButton } from "../delete-app";
 import { useIndex } from "./useIndex";
 import { Card } from "~/components/card";
 import { Link } from "~/components/link";
@@ -42,6 +43,7 @@ export const Admin = ({ apps }: { apps: AppFragment[] }) => {
                     >
                       Edit
                     </Button>
+                    <DeleteButton id={id} />
                   </Card.Footer>
                 </Card.Stack>
               </Card>

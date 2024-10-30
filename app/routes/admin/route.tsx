@@ -10,7 +10,7 @@ import { getFragmentData } from "gql/fragment-masking";
 import {
   AdminAppsDocument,
   AppFragmentDoc,
-  CreateAppDocument,
+  DeleteAppDocument,
 } from "gql/graphql";
 import { Admin } from "./components/index";
 import i18next from "~/i18n/i18next.server";
@@ -49,17 +49,11 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
 
   const { errors } = await apolloClient.mutate({
-    mutation: CreateAppDocument,
-    variables: {
-      title: String(formData.get("title")),
-      detail: String(formData.get("detail")),
-      imageUrl: String(formData.get("imageUrl")),
-      link: String(formData.get("link")),
-      linkType: String(formData.get("linkType")),
-    },
+    mutation: DeleteAppDocument,
+    variables: { id: String(formData.get("appId")) },
   });
   if (errors) throw get500ErrorResponse(errors[0]);
-  return redirect("/");
+  return null;
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
