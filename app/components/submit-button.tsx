@@ -1,5 +1,5 @@
-import { Button, type ButtonProps } from "@chakra-ui/react";
+import { Button, type ButtonProps } from "~/components/ui/button";
 
 export const SubmitButton = (props: ButtonProps) => {
-  return <Button {...props} type="submit" size="lg" colorScheme="teal" />;
+  return <Button {...props} type="submit" size="lg" />;
 };

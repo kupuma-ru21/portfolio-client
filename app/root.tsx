@@ -1,4 +1,4 @@
-import { Box, ChakraProvider, Heading } from "@chakra-ui/react";
+import { Box, ChakraProvider, defaultSystem, Heading } from "@chakra-ui/react";
 import { type LinksFunction, type LoaderFunctionArgs } from "@remix-run/node"; // Depends on the runtime you choose
 import {
   json,
@@ -13,6 +13,7 @@ import {
   useRouteError,
   useRouteLoaderData,
 } from "@remix-run/react";
+import { ThemeProvider } from "next-themes";
 import { useTranslation } from "react-i18next";
 import { useChangeLanguage } from "remix-i18next/react";
 import { AdminHeader } from "./components/header/admin/index";
@@ -20,7 +21,7 @@ import { Header } from "./components/header/user/index";
 import { SideBar } from "./components/side-bar";
 import { SIDE_BAR_WIDTH } from "./components/side-bar/constants";
 import { LOCALES } from "./constants";
-import { theme } from "./styles";
+import { ColorModeProvider } from "~/components/ui/color-mode";
 import i18next from "~/i18n/i18next.server";
 
 export default function App() {
@@ -38,29 +39,34 @@ export default function App() {
 
   return (
     <Document locale={locale} dir={i18n.dir()}>
-      <ChakraProvider theme={theme}>
-        {isAdmin ? (
-          <AdminHeader />
-        ) : (
-          <>
-            <Header />
-            <SideBar />
-          </>
-        )}
-        <Box
-          pl={
-            isAdmin ? undefined : { base: undefined, md: `${SIDE_BAR_WIDTH}px` }
-          }
-          {...(navigation.state === "loading"
-            ? {
-                opacity: 0.25,
-                transition: "opacity 200ms",
-                transitionDelay: "200ms",
-              }
-            : {})}
-        >
-          <Outlet />
-        </Box>
+      <ChakraProvider value={defaultSystem}>
+        <ThemeProvider>
+          {isAdmin ? (
+            <AdminHeader />
+          ) : (
+            <>
+              <Header />
+              <SideBar />
+            </>
+          )}
+          <Box
+            _dark={{ bg: "black" }}
+            pl={
+              isAdmin
+                ? undefined
+                : { base: undefined, md: `${SIDE_BAR_WIDTH}px` }
+            }
+            {...(navigation.state === "loading"
+              ? {
+                  opacity: 0.25,
+                  transition: "opacity 200ms",
+                  transitionDelay: "200ms",
+                }
+              : {})}
+          >
+            <Outlet />
+          </Box>
+        </ThemeProvider>
       </ChakraProvider>
     </Document>
   );
@@ -76,21 +82,23 @@ export function ErrorBoundary() {
 
   return (
     <Document locale={data?.locale ?? LOCALES.en} dir={i18n.dir()}>
-      <ChakraProvider theme={theme}>
-        <Header />
-        <SideBar />
-        <Box
-          w={{ base: undefined, md: `calc(100dvw - ${SIDE_BAR_WIDTH}px)` }}
-          pt="32px"
-          textAlign="center"
-        >
-          <Heading as="h1" mb="32px">
-            {t("Something went wrong")}
-          </Heading>
-          <Heading fontWeight={600} fontSize="3xl">
-            {t("Try reload the page")}
-          </Heading>
-        </Box>
+      <ChakraProvider value={defaultSystem}>
+        <ColorModeProvider>
+          <Header />
+          <SideBar />
+          <Box
+            w={{ base: undefined, md: `calc(100dvw - ${SIDE_BAR_WIDTH}px)` }}
+            pt="32px"
+            textAlign="center"
+          >
+            <Heading as="h1" mb="32px">
+              {t("Something went wrong")}
+            </Heading>
+            <Heading fontWeight={600} fontSize="3xl">
+              {t("Try reload the page")}
+            </Heading>
+          </Box>
+        </ColorModeProvider>
       </ChakraProvider>
     </Document>
   );

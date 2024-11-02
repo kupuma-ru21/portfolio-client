@@ -1,6 +1,6 @@
-import { Button } from "@chakra-ui/react";
 import { useIndex } from "./useIndex";
 import { Card } from "~/components/card";
+import { Button } from "~/components/ui/button";
 
 export const CardContent = ({
   title,
@@ -19,21 +19,16 @@ export const CardContent = ({
     <Card.Stack>
       <Card.Body>
         <Card.Heading>{title}</Card.Heading>
-        <Card.Text noOfLines={noOfLines}>{detail}</Card.Text>
+        <Card.Text lineClamp={noOfLines}>{detail}</Card.Text>
       </Card.Body>
       <Card.Footer>
         <Button onClick={showFullDetail} w="110px">
           {noOfLines === undefined ? t("Fold") : t("Read more")}
         </Button>
-        <Button
-          as="a"
-          href={href}
-          target="_blank"
-          rel="noreferrer"
-          variant="solid"
-          colorScheme="teal"
-        >
-          {linkText}
+        <Button variant="solid">
+          <a href={href} target="_blank" rel="noreferrer">
+            {linkText}
+          </a>
         </Button>
       </Card.Footer>
     </Card.Stack>

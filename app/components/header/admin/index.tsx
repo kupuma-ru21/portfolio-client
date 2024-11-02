@@ -1,4 +1,4 @@
-import { Flex, Icon, IconButton, Tooltip } from "@chakra-ui/react";
+import { Flex, Icon, IconButton } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
 import { IoMdHome } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
@@ -6,6 +6,7 @@ import { SwitchTheme } from "../switch-theme";
 import { Wrapper } from "../wrapper";
 import { useIndex } from "./useIndex";
 import { Link } from "~/components/link";
+import { Tooltip } from "~/components/ui/tooltip";
 
 export const AdminHeader = () => {
   const { t } = useIndex();
@@ -14,23 +15,22 @@ export const AdminHeader = () => {
     <Wrapper>
       <SwitchTheme />
       <Flex gap="16px">
-        <Tooltip label={t("admin-header.Logout")}>
+        <Tooltip content={t("admin-header.Logout")}>
           <Form action="/auth/logout" method="POST">
-            <IconButton
-              type="submit"
-              aria-label={t("admin-header.Logout")}
-              icon={<Icon as={MdLogout} boxSize="24px" />}
-              colorScheme="teal"
-            />
+            <IconButton type="submit" aria-label={t("admin-header.Logout")}>
+              <Icon boxSize="24px">
+                <MdLogout />
+              </Icon>
+            </IconButton>
           </Form>
         </Tooltip>
-        <IconButton
-          as={Link}
-          to="/"
-          aria-label={t("admin-header.Home")}
-          icon={<Icon as={IoMdHome} boxSize="24px" />}
-          colorScheme="teal"
-        />
+        <IconButton aria-label={t("admin-header.Home")}>
+          <Link to="/">
+            <Icon boxSize="24px">
+              <IoMdHome />
+            </Icon>
+          </Link>
+        </IconButton>
       </Flex>
     </Wrapper>
   );

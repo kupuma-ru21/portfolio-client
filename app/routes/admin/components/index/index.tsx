@@ -1,9 +1,10 @@
-import { Box, Button, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { type AppFragment } from "gql/graphql";
 import { DeleteButton } from "../delete-app";
 import { useIndex } from "./useIndex";
 import { Card } from "~/components/card";
 import { Link } from "~/components/link";
+import { Button } from "~/components/ui/button";
 
 export const Admin = ({ apps }: { apps: AppFragment[] }) => {
   const { t } = useIndex();
@@ -15,13 +16,8 @@ export const Admin = ({ apps }: { apps: AppFragment[] }) => {
           <Heading mb="16px" textAlign="center" fontWeight={600}>
             {t("Applications")}
           </Heading>
-          <Button
-            as={Link}
-            to="/admin/add-app"
-            variant="solid"
-            colorScheme="teal"
-          >
-            Add
+          <Button variant="solid">
+            <Link to="/admin/add-app">Add</Link>
           </Button>
         </Flex>
         <Flex direction="column" gap="16px">
@@ -35,13 +31,8 @@ export const Admin = ({ apps }: { apps: AppFragment[] }) => {
                     <Card.Text>{detail}</Card.Text>
                   </Card.Body>
                   <Card.Footer>
-                    <Button
-                      as={Link}
-                      to={`/admin/apps/${id}/edit`}
-                      variant="solid"
-                      colorScheme="green"
-                    >
-                      Edit
+                    <Button variant="solid">
+                      <Link to={`/admin/apps/${id}/edit`}>Edit</Link>
                     </Button>
                     <DeleteButton id={id} />
                   </Card.Footer>

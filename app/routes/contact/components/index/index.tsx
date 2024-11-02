@@ -1,16 +1,10 @@
-import {
-  chakra,
-  Box,
-  Flex,
-  FormControl,
-  FormLabel,
-  Heading,
-} from "@chakra-ui/react";
+import { chakra, Box, Flex, Heading } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
 import { useIndex } from "./useIndex";
 import { Input } from "~/components/input";
 import { SubmitButton } from "~/components/submit-button";
 import { Textarea } from "~/components/textarea";
+import { Field } from "~/components/ui/field";
 
 export const Contact = () => {
   const { t, isSubmitting } = useIndex();
@@ -30,18 +24,15 @@ export const Contact = () => {
             gap="24px"
             mb="54px"
           >
-            <FormControl>
-              <FormLabel>{t("Email address")}</FormLabel>
+            <Field label={t("Email address")}>
               <Input type="email" name="email" />
-            </FormControl>
-            <FormControl>
-              <FormLabel>{t("Subject")}</FormLabel>
+            </Field>
+            <Field label={t("Subject")}>
               <Input name="subject" />
-            </FormControl>
-            <FormControl>
-              <FormLabel>{t("Content")}</FormLabel>
+            </Field>
+            <Field label={t("Content")}>
               <Textarea name="content" />
-            </FormControl>
+            </Field>
           </Flex>
           <SubmitButton>{t("Submit")}</SubmitButton>
         </chakra.fieldset>

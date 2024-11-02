@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
-import { CardFooter } from "@chakra-ui/react";
+import { Card } from "@chakra-ui/react";
 
 export const Footer = ({ children }: { children: ReactNode }) => {
-  return <CardFooter gap="8px">{children}</CardFooter>;
+  return <Card.Footer gap="8px">{children}</Card.Footer>;
 };

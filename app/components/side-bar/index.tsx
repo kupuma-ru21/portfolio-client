@@ -1,7 +1,8 @@
-import { Button, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { useGetLinks } from "../hooks/useGetLinks";
 import { NavLink } from "../nav-link";
 import { SIDE_BAR_WIDTH } from "./constants";
+import { Button } from "~/components/ui/button";
 
 export const SideBar = () => {
   const { links } = useGetLinks();
@@ -12,7 +13,7 @@ export const SideBar = () => {
       w={`${SIDE_BAR_WIDTH}px`}
       direction="column"
       gap="8px"
-      bgColor={useColorModeValue("white", "black")}
+      // bgColor={useColorModeValue("white", "black")}
       position="fixed"
       h="100%"
       boxShadow="0px 1px 5px 0px rgba(88, 102, 126, 0.13)"

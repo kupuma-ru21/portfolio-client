@@ -1,13 +1,4 @@
-import {
-  Flex,
-  Icon,
-  IconButton,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Tooltip,
-} from "@chakra-ui/react";
+import { Flex, IconButton } from "@chakra-ui/react";
 import { CiMenuBurger } from "react-icons/ci";
 import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -18,6 +9,13 @@ import { useIndex } from "./useIndex";
 import { useGetLinks } from "~/components/hooks/useGetLinks";
 import { Link } from "~/components/link";
 import { NavLink } from "~/components/nav-link";
+import {
+  MenuContent,
+  MenuItem,
+  MenuRoot,
+  MenuTrigger,
+} from "~/components/ui/menu";
+import { Tooltip } from "~/components/ui/tooltip";
 
 export const Header = () => {
   const { t } = useIndex();
@@ -27,53 +25,49 @@ export const Header = () => {
     <Wrapper>
       <Flex gap="8px">
         <SwitchTheme />
-        <Menu>
-          <MenuButton
-            display={{ base: "block", md: "none" }}
-            as={IconButton}
-            icon={
-              <Icon
-                as={CiMenuBurger}
-                aria-label={t("header.menu.aria-label")}
-              />
-            }
-          />
-          <MenuList display={{ base: "block", md: "none" }}>
+        <MenuRoot>
+          <MenuTrigger asChild>
+            <IconButton
+              display={{ base: "block", md: "none" }}
+              aria-label={t("header.menu.aria-label")}
+            >
+              <CiMenuBurger />
+            </IconButton>
+          </MenuTrigger>
+          <MenuContent>
             {links.map((link) => {
               return <MenuItem as={NavLink} {...link} key={link.to} />;
             })}
-          </MenuList>
-        </Menu>
+          </MenuContent>
+        </MenuRoot>
       </Flex>
       <Flex gap="16px">
         <ExternalIconLink
           href="https://github.com/kupuma-ru21"
           aria-label="github"
-          iconType={FaGithub}
+          iconType={<FaGithub />}
         />
         <ExternalIconLink
           href="https://www.linkedin.com/in/koichi-kimura-06ba14259/"
           aria-label="linkedin"
-          iconType={FaLinkedin}
+          iconType={<FaLinkedin />}
         />
-        <Tooltip label={t("header.resume.abbr")}>
+        <Tooltip content={t("header.resume.abbr")}>
           <div>
             <ExternalIconLink
               href="/resume.pdf"
               aria-label={t("header.resume.aria-label")}
-              iconType={FaFilePdf}
+              iconType={<FaFilePdf />}
             />
           </div>
         </Tooltip>
-        <Tooltip label={t("header.contact.abbr")}>
+        <Tooltip content={t("header.contact.abbr")}>
           <div>
-            <IconButton
-              as={Link}
-              to="/contact"
-              aria-label={t("header.contact.aria-label")}
-              icon={<Icon as={MdOutlineMailOutline} boxSize="24px" />}
-              colorScheme="teal"
-            />
+            <IconButton aria-label={t("header.contact.aria-label")}>
+              <Link to="/contact">
+                <MdOutlineMailOutline />
+              </Link>
+            </IconButton>
           </div>
         </Tooltip>
       </Flex>

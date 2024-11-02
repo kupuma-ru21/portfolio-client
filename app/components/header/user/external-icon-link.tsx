@@ -1,22 +1,18 @@
-import { Icon, IconButton as IconButtonBase } from "@chakra-ui/react";
-import { type IconType } from "react-icons/lib";
+import { type ReactNode } from "react";
+import { IconButton as IconButtonBase } from "@chakra-ui/react";
 
 export const ExternalIconLink = ({
   iconType,
-  ...rest
+  href,
 }: {
-  iconType: IconType;
+  iconType: ReactNode;
   href: string;
-  "aria-label": string;
 }) => {
   return (
-    <IconButtonBase
-      icon={<Icon as={iconType} boxSize="24px" />}
-      {...rest}
-      colorScheme="teal"
-      as="a"
-      target="_blank"
-      rel="noreferrer"
-    />
+    <IconButtonBase>
+      <a href={href} target="_blank" rel="noreferrer">
+        {iconType}
+      </a>
+    </IconButtonBase>
   );
 };

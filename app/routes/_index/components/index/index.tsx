@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 // import { type AppsQuery } from "gql/graphql";
 import { CardContent } from "../card-body";
 import { useIndex } from "./useIndex";
@@ -37,7 +37,8 @@ export const Index = () =>
             pointerEvents="none"
           />
         </Flex>
-        <Divider />
+        {/* TODO */}
+        {/* <Divider /> */}
         <Box p="16px">
           <Heading mb="16px" textAlign="center" fontWeight={600}>
             {t("Applications I developed at work")}

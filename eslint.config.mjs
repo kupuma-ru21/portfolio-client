@@ -21,7 +21,13 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ["!**/.server", "!**/.client", ".gitignore", "build"],
+    ignores: [
+      "!**/.server",
+      "!**/.client",
+      ".gitignore",
+      "build",
+      "app/components/ui",
+    ],
   },
   ...fixupConfigRules(
     compat.extends(
@@ -86,7 +92,7 @@ export default [
           ],
         },
       ],
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
     },
   },
 ];

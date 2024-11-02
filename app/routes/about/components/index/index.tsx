@@ -1,16 +1,11 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  List,
-  ListIcon,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import { useIndex } from "./useIndex";
 
 export const About = () => {
-  const { t, hobbies } = useIndex();
+  const {
+    t,
+    // hobbies
+  } = useIndex();
 
   return (
     <Box py="20px" px="24px">
@@ -23,7 +18,8 @@ export const About = () => {
       <Heading as="h3" mb="16px">
         {t("I like to do")}
       </Heading>
-      <List spacing="24px">
+      {/* TODO */}
+      {/* <List spacing="24px">
         {hobbies.map(({ icon, title, descriptions }) => {
           return (
             <ListItem key={title}>
@@ -39,7 +35,7 @@ export const About = () => {
             </ListItem>
           );
         })}
-      </List>
+      </List> */}
     </Box>
   );
 };
