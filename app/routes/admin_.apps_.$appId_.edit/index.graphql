@@ -11,17 +11,17 @@ mutation UpdateApp(
   $title: String!
   $detail: String!
   $link: String!
-  $linkType: String!
+  $linkType: AppLinkType!
   $imageUrl: String!
 ) {
   updateApp(
+    id: $id
     input: {
-      id: $id
       title: $title
       detail: $detail
       link: $link
       linkType: $linkType
-      imageUrl: $imageUrl
+      imageURL: $imageUrl
     }
   )
 }

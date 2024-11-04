@@ -2,8 +2,8 @@ mutation CreateApp(
   $title: String!
   $detail: String!
   $link: String!
-  $linkType: String!
-  $imageUrl: String!
+  $linkType: AppLinkType!
+  $imageURL: String!
 ) {
   createApp(
     input: {
@@ -11,7 +11,7 @@ mutation CreateApp(
       detail: $detail
       link: $link
       linkType: $linkType
-      imageUrl: $imageUrl
+      imageURL: $imageURL
     }
   )
 }

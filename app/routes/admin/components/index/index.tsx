@@ -25,10 +25,10 @@ export const Admin = ({ apps }: { apps: AppFragment[] }) => {
           </Button>
         </Flex>
         <Flex direction="column" gap="16px">
-          {apps.map(({ id, title, detail, imageUrl }) => {
+          {apps.map(({ id, title, detail, imageURL }) => {
             return (
               <Card key={id}>
-                <Card.Image src={imageUrl} alt={title} />
+                <Card.Image src={imageURL} alt={title} />
                 <Card.Stack>
                   <Card.Body>
                     <Card.Heading>{title}</Card.Heading>

@@ -10,7 +10,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
-import { type AppQuery, type AppFragment } from "gql/graphql";
+import { type AppQuery, type AppFragment, AppLinkType } from "gql/graphql";
 import { useIndex } from "./useIndex";
 import { Input } from "~/components/input";
 import { SubmitButton } from "~/components/submit-button";
@@ -45,7 +45,7 @@ export const EditApp = ({ app }: { app: AppQuery["app"] & AppFragment }) => {
             </FormControl>
             <FormControl>
               <FormLabel>{t("imageUrl")}</FormLabel>
-              <Input defaultValue={app.imageUrl} name="imageUrl" />
+              <Input defaultValue={app.imageURL} name="imageUrl" />
             </FormControl>
             <FormControl>
               <FormLabel>{t("link")}</FormLabel>
@@ -55,10 +55,10 @@ export const EditApp = ({ app }: { app: AppQuery["app"] & AppFragment }) => {
               <FormLabel>{t("Type of the URL")}</FormLabel>
               <RadioGroup name="linkType" defaultValue={app.linkType}>
                 <Stack direction="row" gap="16px">
-                  <Radio isRequired value="App">
+                  <Radio isRequired value={AppLinkType.App}>
                     {t("App")}
                   </Radio>
-                  <Radio value="Company">{t("Company")}</Radio>
+                  <Radio value={AppLinkType.Company}>{t("Company")}</Radio>
                 </Stack>
               </RadioGroup>
             </FormControl>

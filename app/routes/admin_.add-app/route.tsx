@@ -5,7 +5,7 @@ import {
   json,
   type MetaFunction,
 } from "@remix-run/node";
-import { CreateAppDocument } from "gql/graphql";
+import { type AppLinkType, CreateAppDocument } from "gql/graphql";
 import { AddApp } from "./components/index";
 import i18next from "~/i18n/i18next.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
@@ -37,9 +37,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     variables: {
       title: String(formData.get("title")),
       detail: String(formData.get("detail")),
-      imageUrl: String(formData.get("imageUrl")),
+      imageURL: String(formData.get("imageUrl")),
       link: String(formData.get("link")),
-      linkType: String(formData.get("linkType")),
+      linkType: String(formData.get("linkType")) as AppLinkType,
     },
   });
   if (errors) throw get500ErrorResponse(errors[0]);

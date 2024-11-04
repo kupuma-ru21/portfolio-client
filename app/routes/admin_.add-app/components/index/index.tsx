@@ -10,6 +10,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { Form } from "@remix-run/react";
+import { AppLinkType } from "gql/graphql";
 import { useIndex } from "./useIndex";
 import { Input } from "~/components/input";
 import { SubmitButton } from "~/components/submit-button";
@@ -53,10 +54,10 @@ export const AddApp = () => {
               <FormLabel>{t("Type of the URL")}</FormLabel>
               <RadioGroup name="linkType">
                 <Stack direction="row" gap="16px">
-                  <Radio isRequired value="App">
+                  <Radio isRequired value={AppLinkType.App}>
                     {t("App")}
                   </Radio>
-                  <Radio value="Company">{t("Company")}</Radio>
+                  <Radio value={AppLinkType.Company}>{t("Company")}</Radio>
                 </Stack>
               </RadioGroup>
             </FormControl>

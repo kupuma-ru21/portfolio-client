@@ -7,7 +7,12 @@ import {
 } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getFragmentData } from "gql/fragment-masking";
-import { AppDocument, AppFragmentDoc, UpdateAppDocument } from "gql/graphql";
+import {
+  AppDocument,
+  AppFragmentDoc,
+  type AppLinkType,
+  UpdateAppDocument,
+} from "gql/graphql";
 import { EditApp } from "./components/index";
 import i18next from "~/i18n/i18next.server";
 import { createMetaTitle } from "~/utils/createMetaTitle";
@@ -53,7 +58,7 @@ export const action = async ({ request, params }: ActionFunctionArgs) => {
       detail: String(formData.get("detail")),
       imageUrl: String(formData.get("imageUrl")),
       link: String(formData.get("link")),
-      linkType: String(formData.get("linkType")),
+      linkType: String(formData.get("linkType")) as AppLinkType,
     },
   });
   if (errors) throw get500ErrorResponse(errors[0]);

@@ -14,11 +14,11 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 const documents = {
-    "fragment App on App {\n  id\n  title\n  detail\n  imageUrl\n}": types.AppFragmentDoc,
+    "fragment App on App {\n  id\n  title\n  detail\n  imageURL\n}": types.AppFragmentDoc,
     "query Apps {\n  apps {\n    ...App\n    link\n    linkType\n  }\n}": types.AppsDocument,
     "query AdminApps {\n  apps {\n    ...App\n  }\n}\n\nmutation DeleteApp($id: ID!) {\n  deleteApp(id: $id)\n}": types.AdminAppsDocument,
-    "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  )\n}": types.CreateAppDocument,
-    "query App($id: ID!) {\n  app(id: $id) {\n    ...App\n    link\n    linkType\n  }\n}\n\nmutation UpdateApp($id: ID!, $title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  updateApp(\n    input: {id: $id, title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  )\n}": types.AppDocument,
+    "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: AppLinkType!, $imageURL: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageURL: $imageURL}\n  )\n}": types.CreateAppDocument,
+    "query App($id: ID!) {\n  app(id: $id) {\n    ...App\n    link\n    linkType\n  }\n}\n\nmutation UpdateApp($id: ID!, $title: String!, $detail: String!, $link: String!, $linkType: AppLinkType!, $imageUrl: String!) {\n  updateApp(\n    id: $id\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageURL: $imageUrl}\n  )\n}": types.AppDocument,
 };
 
 /**
@@ -38,7 +38,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "fragment App on App {\n  id\n  title\n  detail\n  imageUrl\n}"): (typeof documents)["fragment App on App {\n  id\n  title\n  detail\n  imageUrl\n}"];
+export function graphql(source: "fragment App on App {\n  id\n  title\n  detail\n  imageURL\n}"): (typeof documents)["fragment App on App {\n  id\n  title\n  detail\n  imageURL\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -50,11 +50,11 @@ export function graphql(source: "query AdminApps {\n  apps {\n    ...App\n  }\n}
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  )\n}"): (typeof documents)["mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  )\n}"];
+export function graphql(source: "mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: AppLinkType!, $imageURL: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageURL: $imageURL}\n  )\n}"): (typeof documents)["mutation CreateApp($title: String!, $detail: String!, $link: String!, $linkType: AppLinkType!, $imageURL: String!) {\n  createApp(\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageURL: $imageURL}\n  )\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "query App($id: ID!) {\n  app(id: $id) {\n    ...App\n    link\n    linkType\n  }\n}\n\nmutation UpdateApp($id: ID!, $title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  updateApp(\n    input: {id: $id, title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  )\n}"): (typeof documents)["query App($id: ID!) {\n  app(id: $id) {\n    ...App\n    link\n    linkType\n  }\n}\n\nmutation UpdateApp($id: ID!, $title: String!, $detail: String!, $link: String!, $linkType: String!, $imageUrl: String!) {\n  updateApp(\n    input: {id: $id, title: $title, detail: $detail, link: $link, linkType: $linkType, imageUrl: $imageUrl}\n  )\n}"];
+export function graphql(source: "query App($id: ID!) {\n  app(id: $id) {\n    ...App\n    link\n    linkType\n  }\n}\n\nmutation UpdateApp($id: ID!, $title: String!, $detail: String!, $link: String!, $linkType: AppLinkType!, $imageUrl: String!) {\n  updateApp(\n    id: $id\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageURL: $imageUrl}\n  )\n}"): (typeof documents)["query App($id: ID!) {\n  app(id: $id) {\n    ...App\n    link\n    linkType\n  }\n}\n\nmutation UpdateApp($id: ID!, $title: String!, $detail: String!, $link: String!, $linkType: AppLinkType!, $imageUrl: String!) {\n  updateApp(\n    id: $id\n    input: {title: $title, detail: $detail, link: $link, linkType: $linkType, imageURL: $imageUrl}\n  )\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

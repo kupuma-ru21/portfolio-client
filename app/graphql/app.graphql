@@ -2,5 +2,5 @@ fragment App on App {
   id
   title
   detail
-  imageUrl
+  imageURL
 }
