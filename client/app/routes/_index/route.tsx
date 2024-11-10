@@ -12,7 +12,6 @@ import { get500ErrorResponse } from "~/utils/error/get500ErrorResponse";
 import { apolloClient } from "~/utils/graphql";
 
 export default function Route() {
-  console.log("test");
   // const data = useLoaderData<typeof loader>();
   return (
     <Index
