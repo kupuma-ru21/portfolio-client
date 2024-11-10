@@ -13,7 +13,9 @@
     "interface": "i18next-resources-for-ts interface -i ./public/locales/en -o ./@types/resources.d.ts",
     "test": "vitest",
     "format": "eslint ./app --fix",
-    "codegen": "graphql-codegen -r dotenv/config"
+    "codegen": "graphql-codegen -r dotenv/config",
+    "docker-compose-up": "docker compose up --build -d",
+    "docker-compose-down": "docker compose down"
   },
   "dependencies": {
     "@apollo/client": "^3.11.8",
